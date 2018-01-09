@@ -34,7 +34,7 @@ public:
         else
         {
             int i , j ;
-            for( i = 1; i < num.length() / 2.0 ; i ++)//出现奇数/2 c++编译器直接舍去了0.5导致错误出现 eg：3/2 = 1
+            for( i = 1; i <= num.length() / 2.0 ; i ++)
             {
                 if( num[0] == '0' && i > 1)
                 {
