@@ -4,25 +4,11 @@
  */
 class Solution {
 public:
-  void str2long(long &long_temp, const string &string_temp)
-  {
-    stringstream stream(string_temp);
-    stream >> long_temp;
-  }
-  void long2str(const long &long_temp, string &string_temp)
-  {
-    stringstream stream;
-    stream << long_temp;
-    string_temp = stream.str();
-  }
   long findPalindrom(long half)
   {
-    long ret;
-    string sfront;
-    long2str(half, sfront);
+    string sfront = to_string(half);
     string sback(sfront.rbegin(), sfront.rend());
-    str2long(ret, sfront + sback);
-    return ret;
+    return stol(sfront+sback);
   }
   int largestPalindrome(int n)
   {
@@ -50,8 +36,7 @@ public:
         }
         half--;
       }
-      int ret = palindrom % 1337;
-      return ret;
-    }
+            return palindrom % 1337;
+        }
   }
 };
