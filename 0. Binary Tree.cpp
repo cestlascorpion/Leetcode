@@ -41,7 +41,8 @@ void noRePreOrder(TreeNode* root)
 		return;
 	TreeNode* p = root;
 	stack<TreeNode*> s;
-	while(!s.empty()||p)
+
+	while(!s.empty() || p)
 	{
 		if(p)
 		{
@@ -55,6 +56,7 @@ void noRePreOrder(TreeNode* root)
 			s.pop();
 			p = p->right;
 		}
+
 	}
 }
 void noReInorderr(TreeNode* root)
@@ -63,7 +65,8 @@ void noReInorderr(TreeNode* root)
 		return;
 	TreeNode* p = root;
 	stack<TreeNode*> s;
-	while(!s.empty()||p)
+
+	while(!s.empty() || p)
 	{
 		if(p)
 		{
@@ -99,7 +102,7 @@ void noRePostOrder(TreeNode* root)
 		//走到这里，pCur都是空，并已经遍历到左子树底端(看成扩充二叉树，则空，亦是某棵树的左孩子)
 		pCur = s.top();
 		s.pop();
-		if(pCur->right == NULL || pCur->right == pPre;)
+		if(pCur->right == NULL || pCur->right == pPre)
 		{
 			std::cout<<pCur->val<<std::endl;
 			pPre = pCur;//pPre指向打印过的节点
@@ -117,5 +120,72 @@ void noRePostOrder(TreeNode* root)
 			}
 		}
 	}
+}
+void noRePostOrder2(TreeNode* root)
+{
+	if(root == NULL)
+		return;
+	TreeNode* temp = root;
+	TreeNode* pre = root;
+	stack<TreeNode*> s;
 
+	while(temp||!s.empty())
+	{
+		if(temp)
+		{
+			s.push(temp);
+			temp = temp->left;
+		}
+		else
+		{
+			TreeNode* topNode = s.top();//没有出栈
+			if(topNode->right && pre!= topNode->right)
+				temp = topNode->right;
+			else
+			{
+				std::cout<<topNode->val<<std::endl;
+				pre = topNode;
+				s.pop();
+			}
+		}
+	}
+
+}
+void DepthFirstTravel(TreeNode* root)
+{
+	if(root == NULL)
+		return;
+	TreeNode* p = root;
+	stack<TreeNode*> s;
+	s.push(p);
+	while(!s.empty())
+	{
+	    p = s.top();
+		std::cout<<p->val<<std::endl;
+		s.pop();
+
+		if(p->left)
+			s.push(p->left);
+		if(p->right)
+			s.push(p->right);
+	}
+}
+void BreadthFirstTravel(TreeNode* root)
+{
+	if(root == NULL)
+		return;
+	TreeNode* p = root;
+	queue<TreeNode*> q;
+	q.push(p);
+	while(!s.empty)
+	{
+		p = q.front();
+		std::cout<<p->val<<std::endl;
+		q.pop();
+
+		if(p->left)
+			q.push(p->left);
+		if(p->right)
+			q.push(p->right);
+	}
 }
