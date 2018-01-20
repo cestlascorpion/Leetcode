@@ -102,7 +102,7 @@ void noRePostOrder(TreeNode* root)
 		if(pCur->right == NULL || pCur->right == pPre;)
 		{
 			std::cout<<pCur->val<<std::endl;
-			pPre = pCur;
+			pPre = pCur;//pPre指向打印过的节点
 		}
 		else
 		{
@@ -117,5 +117,5 @@ void noRePostOrder(TreeNode* root)
 			}
 		}
 	}
-	
+
 }
