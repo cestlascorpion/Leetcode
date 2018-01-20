@@ -1,7 +1,7 @@
 /* 70. Climbing Stairs
  * 斐波那契数列 f(n) = f(n-2) + f(n-1)
  * 到达第n阶的方法 = 到达第n-2阶的方法 + 到达第n-1阶的方法 f(1) = 1 f(2) = 2
- * 递归耗时太长 
+ * 递归耗时太长，使用递推求解
  */
 class Solution {
 public:
