@@ -192,37 +192,41 @@ void MergeSort(vector<int>& nums)
 /* 堆排序
  * 时间复杂度 平均 最坏 最好 nlogn 空间复杂度 n 不稳定 复杂
  */
-void HeapAdjust(vector<int>&nums, int root, int size){
-
+void HeapAdjust(vector<int>&nums, int root, int size)
+{
     //左孩子
     int leftChild = 2 * root + 1;
     //若有左孩子
-    if (leftChild <= size - 1){
+    if (leftChild <= size - 1)
+    {
         //右孩子
         int rightChild = leftChild + 1;
         //若有右孩子
-        if (rightChild <= size - 1){
-            if (nums[leftChild] < nums[rightChild]){
+        if (rightChild <= size - 1)
+        {
+            if (nums[leftChild] < nums[rightChild])
+            {
                 leftChild = rightChild;
             }
         }
 
-        if (nums[root] < nums[leftChild]){
+        if (nums[root] < nums[leftChild])
+        {
             swap(nums[root], nums[leftChild]);
             HeapAdjust(nums, leftChild, size);
         }
     }
 }
-void HeapSort(vector<int>& nums){
-
+void HeapSort(vector<int>& nums)
+{
     int size = nums.size();
-    for (int i = size / 2 - 1; i >= 0; --i){
-
+    for (int i = size / 2 - 1; i >= 0; i--)
+    {
         HeapAdjust(nums, i, size);
     }
 
-    for (int i = size - 1; i>0; --i){
-
+    for (int i = size - 1; i>0; i--)
+    {
         swap(nums[0], nums[i]);
         HeapAdjust(nums, 0, i);
     }
