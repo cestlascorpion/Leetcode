@@ -1,5 +1,15 @@
 /*
- * 常见的排序算法有：插入 希尔  冒泡  快速  选择 堆排序 归并  基数
+ * 常见的排序算法有：直接插入 希尔      -插入排序
+ *                 冒泡  快速         -交换排序
+ *                 直接选择  堆排序   -选择排序
+ *                 归并  
+ *                 基数
+ * 稳定 ： 直接插入 冒泡 归并 基数 
+ * 直接插入：n小时较好
+ * 直接选择：n小时较好
+ * 堆排序：n大时较好
+ * 冒泡排序：n小时较好
+ * 归并排序：n大时较好
  */
 
 /*
@@ -132,11 +142,37 @@ void ShellSort(vector<int>& nums)
     }
 }
 /*合并排序采用分治算法，思路是将两个或以上的有序表合并为一个有序表，把待排序的序列分割成若干个子序列，每个子序列有序，然后再把子序列合并为一个有序序列。若将两个有序表合并成一个有序表，则成为2路合并排序。2路归并即使将2个有序表组合成一个新的有序表。假定待排序表有n个元素，则可以看成是n个有序的字表，每个子表长度为1，然后两两归并…不停重复，直到合并成一个长度为n的有序列表为止。Merge()函数是将前后相邻的两个有序表归并为一个有序表，设A[low…mid]和A[mid+1…high]存放在同一顺序表的相邻位置上，先将他们复制到辅助数组B中，每次从对应B中的两个段取出一个元素进行比较，将较小者放入A中。
- * 时间复杂度 nlogn 最坏 nlogn 最好 nlogn 空间复杂度 n 稳定 复杂
+ * 时间复杂度 平均 nlogn 最坏 nlogn 最好 nlogn 空间复杂度 n 稳定 复杂
  */
 void merge(vector<int>& nums, int left, int mid, int right)
 {
-    
+    int k = right - left + 1;
+    vector<int> tempArray(k);
+    int p = right, q = mid;
+    while(p > mid && q >= left)
+    {
+        if(nums[p] > nums[q])
+        {
+            tempArray[--k] = nums[p--];
+        }
+        else
+        {
+            tempArray[--k] = nums[q--];
+        }
+    }
+    while(p > mid)
+    {
+        tempArray[--k] = nums[q--];
+    }
+    while(q >= left)
+    {
+        tempArray[--k] = nums[q--];
+    }
+    k = right - left + 1;
+    for(int i = 0; i < k; i++)
+    {
+        nums[left + i] = tempArray[i];
+    }
 }
 void partion(vector<int>& nums, int left, int right)
 {
@@ -152,4 +188,76 @@ void MergeSort(vector<int>& nums)
 {
     int len = nums.size();
     partion(nums, 0, len - 1);
+}
+/* 堆排序
+ * 时间复杂度 平均 最坏 最好 nlogn 空间复杂度 n 不稳定 复杂
+ */
+void HeapAdjust(vector<int>&nums, int root, int size){
+
+    //左孩子
+    int leftChild = 2 * root + 1;
+    //若有左孩子
+    if (leftChild <= size - 1){
+        //右孩子
+        int rightChild = leftChild + 1;
+        //若有右孩子
+        if (rightChild <= size - 1){
+            if (nums[leftChild] < nums[rightChild]){
+                leftChild = rightChild;
+            }
+        }
+
+        if (nums[root] < nums[leftChild]){
+            swap(nums[root], nums[leftChild]);
+            HeapAdjust(nums, leftChild, size);
+        }
+    }
+}
+void HeapSort(vector<int>& nums){
+
+    int size = nums.size();
+    for (int i = size / 2 - 1; i >= 0; --i){
+
+        HeapAdjust(nums, i, size);
+    }
+
+    for (int i = size - 1; i>0; --i){
+
+        swap(nums[0], nums[i]);
+        HeapAdjust(nums, 0, i);
+    }
+}
+/* 基数排序
+ * 时间复杂度 平均 最坏 最好 d(n+r) 空间复杂度 (n+r) 稳定 复杂 
+ */
+void RadixSort(vector<int>& array)
+{
+    int size = array.size();
+    int bucket[10][10] = { 0 };//定义基数桶  
+    int order[10] = { 0 };//保存每个基数桶之中的元素个数  
+    int key_size = KeySize(array);//计算关键字位数的最大值  
+    for (int n = 1; key_size>0; n *= 10, key_size--)
+    {
+        /*将待排序的元素按照关键值的大小依次放入基数桶之中*/
+        for (int i = 0; i<size; i++)
+        {
+            int lsd = (array[i] / n) % 10;
+            bucket[lsd][order[lsd]] = array[i];
+            order[lsd]++;
+        }
+        /*将基数桶中的元素重新串接起来*/
+        int k = 0,i;
+        for (i = 0; i<10; i++)
+        {
+            if (order[i] != 0)
+            {
+                for (int j = 0; j<order[i]; j++)
+                {
+                    array[k] = bucket[i][j];
+                    k++;
+                }
+                order[i] = 0;
+            }
+        }
+    }
 }
