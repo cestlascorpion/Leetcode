@@ -24,3 +24,34 @@ class Solution
         return f[n - 1];
     }
 };
+class Solution
+{
+  public:
+    int rob(vector<int> &nums)
+    {
+        int n = nums.size(), pre = 0, cur = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int temp = max(pre + nums[i], cur);
+            pre = cur;
+            cur = temp;
+        }
+        return cur;
+    }
+};
+class Solution
+{
+  public:
+    int rob(vector<int> &num)
+    {
+        int best0 = 0; // 表示没有选择当前houses
+        int best1 = 0; // 表示选择了当前houses
+        for (int i = 0; i < num.size(); i++)
+        {
+            int temp = best0;
+            best0 = max(best0, best1); // 没有选择当前houses，那么它等于上次选择了或没选择的最大值
+            best1 = temp + num[i];     // 选择了当前houses，值只能等于上次没选择的+当前houses的money
+        }
+        return max(best0, best1);
+    }
+};
