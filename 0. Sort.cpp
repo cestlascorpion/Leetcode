@@ -21,7 +21,7 @@ void BubbleSortR(vector<int>& nums)
     int len = nums.size();
     for(int i = 0; i < len - 1; i++)//一共进行len-1次
     {
-        for(int j = 1; j< len - i)
+        for(int j = 1; j< len - i; j++)
         {
             if(nums[j] < nums[j-1])
             {
