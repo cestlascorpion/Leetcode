@@ -16,6 +16,10 @@
  * 冒泡排序是最简单的排序算法，冒泡排序的基本思想是从后往前（或从前往后）两两比较相邻元素的值，若为逆序，则交换它们，直到序列比较完毕。每一趟冒泡都会将一个元素放置到最终的位置上。
  * 时间复杂度 平均 n^2 最差 n^2 最好 n 空间复杂度 1 稳定 简单 
  */
+#include <vector>
+#include <stack>
+#include <queue>
+using namespace std;
 void BubbleSortR(vector<int> &nums)
 {
     int len = nums.size();
@@ -35,7 +39,7 @@ void BubbleSortL(vector<int> &nums)
     int len = nums.size();
     for (int i = 0; i < len - 1; i++)
     {
-        for (int j = n - i; j > i; j--)
+        for (int j = len - i; j > i; j--)
         {
             if (nums[j] < nums[j - 1])
             {
@@ -75,7 +79,7 @@ void QuickSort(vector<int> &nums, int left, int right)
     {
         int pos = Partion(nums, left, right);
         QuickSort(nums, left, pos - 1);
-        QuickSort(nums, pos + 1, right)
+        QuickSort(nums, pos + 1, right);
     }
 }
 /* 
@@ -114,7 +118,7 @@ void InsertSort(vector<int> &nums)
         int j;
         for (j = i - 1; j >= 0 && key < nums[j]; j--)
         {
-            nums[j + 1] = num[j]; //如果nums[j]比带插入元素大，则向后移动
+            nums[j + 1] = nums[j]; //如果nums[j]比带插入元素大，则向后移动
         }
         nums[j + 1] = key; //空出来的位置插入新元素(因为上一个比key大的元素移动后做了j--，所以+1)
     }
@@ -132,6 +136,7 @@ void ShellSort(vector<int> &nums)
         for (int i = d; i < len; i++)
         {
             temp = nums[i];
+            int j;
             for (j = i - d; j >= 0 && temp < nums[j]; j = j - d)
             {
                 nums[j + d] = temp;
@@ -164,95 +169,104 @@ void mMerge(vector<int> &nums, int left, int mid, int right)
     k = right - left + 1;
     for (int i = 0; i < k; i++)
         nums[left + i] = tmpArray[i];
+}
+void partion(vector<int> &nums, int left, int right)
+{
+    if (left < right)
+    {
+        int mid = left + (right - left) / 2;
+        partion(nums, left, mid);
+        partion(nums, mid + 1, right);
+        mMerge(nums, left, mid, right);
+    }
+}
+void MergeSort(vector<int> &nums)
+{
+    int len = nums.size();
+    partion(nums, 0, len - 1);
+}
 
-    void partion(vector<int> & nums, int left, int right)
+void MergeSort2(vector<int> &nums)
+{
+    if (nums.size() < 1)
+        return;
+    topDownMergeSort(nums, 0, nums.size() - 1);
+}
+void topDownMergeSort(vector<int> &nums, int low, int high)
+{
+    if (low <= high)
+        return;
+    int mid = (low + high) >> 1;
+    topDownMergeSort(nums, low, mid);
+    topDownMergeSort(nums, mid + 1, high);
+    merge2(nums, low, mid, high);
+}
+void merge2(vector<int> &nums, int low, int mid, int high)
+{
+    int i = low, j = mid + 1, k = low;
+    vector<int> temp(nums.size());
+    for (int k = low; k < nums.size(); k++)
+        temp[k] = nums[k];
+
+    while (i <= mid && j <= high)
     {
-        if (left < right)
-        {
-            int mid = left + (right - left) / 2;
-            partion(nums, left, mid);
-            partion(nums, left, mid + 1, right);
-            merge(nums, left, mid, right);
-        }
+        if (temp[i] < temp[j])
+            nums[k++] = temp[i++];
+        else
+            nums[k++] = temp[j++];
     }
-    void MergeSort(vector<int> & nums)
-    {
-        int len = nums.size();
-        partion(nums, 0, len - 1);
-    }
-    /* 堆排序
+    if (i <= mid)
+        while (i <= mid)
+            nums[k++] = temp[i++];
+    if (j <= high)
+        while (j <= high)
+            nums[k++] = temp[j++];
+}
+/* 堆排序
  * 时间复杂度 平均 最坏 最好 nlogn 空间复杂度 n 不稳定 复杂
  */
-    void HeapAdjust(vector<int> & nums, int root, int size)
+void HeapAdjust(vector<int> &nums, int root, int size)
+{
+    //左孩子
+    int maxChild = 2 * root + 1; // store the max of  leftChild and rightChild
+    //若有左孩子
+    if (maxChild <= size - 1)
     {
-        //左孩子
-        int leftChild = 2 * root + 1;
-        //若有左孩子
-        if (leftChild <= size - 1)
+        //右孩子
+        int maxChild2 = maxChild + 1;
+        //若有右孩子
+        if (maxChild2 <= size - 1)
         {
-            //右孩子
-            int rightChild = leftChild + 1;
-            //若有右孩子
-            if (rightChild <= size - 1)
+            if (nums[maxChild] < nums[maxChild2])
             {
-                if (nums[leftChild] < nums[rightChild])
-                {
-                    leftChild = rightChild;
-                }
+                maxChild = maxChild2;
             }
-
-            if (nums[root] < nums[leftChild])
-            {
-                swap(nums[root], nums[leftChild]);
-                HeapAdjust(nums, leftChild, size);
-            }
-        }
-    }
-    void HeapSort(vector<int> & nums)
-    {
-        int size = nums.size();
-        for (int i = size / 2 - 1; i >= 0; i--)
-        {
-            HeapAdjust(nums, i, size);
         }
 
-        for (int i = size - 1; i > 0; i--)
+        if (nums[root] < nums[maxChild])
         {
-            swap(nums[0], nums[i]);
-            HeapAdjust(nums, 0, i);
+            swap(nums[root], nums[maxChild]);
+            HeapAdjust(nums, maxChild, size);
         }
     }
-    /* 基数排序
- * 时间复杂度 平均 最坏 最好 d(n+r) 空间复杂度 (n+r) 稳定 复杂 
- */
-    void RadixSort(vector<int> & array)
+}
+//  6 9 4 8 5 8 5 7
+//  0 1 2 3 4 5 6 7
+//           0
+//       1     2
+//    3  4  5  6
+//  7  8
+void HeapSort(vector<int> &nums)
+{
+    int size = nums.size();
+    for (int i = size / 2 - 1; i >= 0; i--) //7/2-1 =2  8/2-1=3
     {
-        int size = array.size();
-        int bucket[10][10] = {0};      //定义基数桶
-        int order[10] = {0};           //保存每个基数桶之中的元素个数
-        int key_size = KeySize(array); //计算关键字位数的最大值
-        for (int n = 1; key_size > 0; n *= 10, key_size--)
-        {
-            /*将待排序的元素按照关键值的大小依次放入基数桶之中*/
-            for (int i = 0; i < size; i++)
-            {
-                int lsd = (array[i] / n) % 10;
-                bucket[lsd][order[lsd]] = array[i];
-                order[lsd]++;
-            }
-            /*将基数桶中的元素重新串接起来*/
-            int k = 0, i;
-            for (i = 0; i < 10; i++)
-            {
-                if (order[i] != 0)
-                {
-                    for (int j = 0; j < order[i]; j++)
-                    {
-                        array[k] = bucket[i][j];
-                        k++;
-                    }
-                    order[i] = 0;
-                }
-            }
-        }
+        HeapAdjust(nums, i, size);
     }
+
+    for (int i = size - 1; i > 0; i--)
+    {
+        swap(nums[0], nums[i]);
+        HeapAdjust(nums, 0, i);
+    }
+}
