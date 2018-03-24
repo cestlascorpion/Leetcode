@@ -32,5 +32,6 @@ class Solution
             grid[i][j] = 0;
             return 1 + calArea(m, n, i - 1, j, grid) + calArea(m, n, i + 1, j, grid) + calArea(m, n, i, j - 1, grid) + calArea(m, n, i, j + 1, grid);
         }
+        return 0;
     }
 };

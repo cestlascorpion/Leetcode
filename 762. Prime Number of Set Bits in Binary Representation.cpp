@@ -11,7 +11,14 @@ class Solution
         int ans = 0;
         if (L > R)
             return ans;
-
+        primes.insert(2);
+        primes.insert(3);
+        primes.insert(5);
+        primes.insert(7);
+        primes.insert(11);
+        primes.insert(13);
+        primes.insert(17);
+        primes.insert(19);
         for (int i = L; i <= R; i++)
         {
             int bits = getBits(i);
@@ -40,5 +47,5 @@ class Solution
     }
 
   private:
-    std::set<int> primes = {2, 3, 5, 7, 11, 13, 17, 19};
+    set<int> primes;
 };

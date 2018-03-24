@@ -9,6 +9,8 @@
 #include <limits.h>
 #include <set>
 #include <numeric>
+#include <functional>
+#include <numeric>
 
 using namespace std;
 struct TreeNode
