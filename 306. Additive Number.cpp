@@ -3,66 +3,63 @@
 class Solution
 {
   public:
-    void str2long(long &long_temp, const string &string_temp)
+    string add(string s1, string s2)
     {
-        stringstream stream(string_temp);
-        stream >> long_temp;
-    }
-    void long2str(const long &long_temp, string &string_temp)
-    {
-        stringstream stream;
-        stream << long_temp;
-        string_temp = stream.str();
-    }
-    bool isValid(const long &l_first, const long &l_second, const int &start, string num)
-    {
-        if (start == num.length())
+        string result;
+        int flag = 0, i = s1.size() - 1, j = s2.size() - 1;
+        while (i >= 0 || j >= 0)
         {
-            return true;
+            int num1 = 0, num2 = 0;
+            if (i >= 0)
+                num1 = s1[i] - '0';
+            if (j >= 0)
+                num2 = s2[j] - '0';
+            result.insert(result.begin(), '0' + (num1 + num2 + flag) % 10);
+            flag = (num1 + num2 + flag) / 10;
+            i--, j--;
         }
-        else
-        {
-            long third = l_first + l_second;
-            long second = l_second;
-            string sum;
-            long2str(third, sum);
-            return num.substr(start, sum.length()) == sum && isValid(second, third, start + sum.length(), num);
-        }
+        if (flag == 1)
+            result.insert(result.begin(), '1');
+        return result;
     }
+
+    bool DFS(string num, string num1, string num2)
+    {
+        if (num.size() == 0 || num[0] == '0')
+            return false;
+        for (int i = 0; i < num.size(); i++)
+        {
+            string x = num.substr(0, i + 1);
+            if (x == add(num1, num2))
+            {
+                if (i == num.size() - 1)
+                    return true;
+                return DFS(num.substr(i + 1), num2, x);
+            }
+        }
+        return false;
+    }
+
     bool isAdditiveNumber(string num)
     {
-        if (num.length() < 3)
-        {
+        int len = num.size();
+        if (len < 3)
             return false;
-        }
-        else
+        string num1, num2;
+        for (int i = 0; i < len - 2; i++)
         {
-            int i, j;
-            for (i = 1; i <= num.length() / 2.0; i++)
+            num1 = num.substr(0, i + 1);
+            for (int j = i + 1; j < len - 1; j++)
             {
-                if (num[0] == '0' && i > 1)
-                {
-                    return false; //结束
-                }
-                string s_first = num.substr(0, i);
-                long l_first;
-                str2long(l_first, s_first);
-                for (j = 1; num.length() - j - i >= i && num.length() - j - i >= j; j++)
-                {
-                    if (num[i] == '0' && j > 1)
-                    {
-                        break; // 跳出内层循环，第 2 个数字的第 1 位是 0
-                    }
-                    string s_second = num.substr(i, j);
-                    long l_second;
-                    str2long(l_second, s_second);
-                    if (isValid(l_first, l_second, i + j, num))
-                    {
-                        return true;
-                    }
-                }
+                num2 = num.substr(i + 1, j - i);
+                if (DFS(num.substr(j + 1), num1, num2))
+                    return true;
+                if (num[i + 1] == '0')
+                    break;
             }
-            return false;
+            if (num[0] == '0')
+                break;
         }
+        return false;
     }
 };
