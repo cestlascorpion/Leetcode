@@ -1,4 +1,4 @@
-#include "0.config.h"
+#include "0. config.h"
 
 class Solution
 {
@@ -39,7 +39,7 @@ class Solution
             return false;
     }
 };
-class Solution
+class Solution2
 {
   public:
     bool isValid(string s)

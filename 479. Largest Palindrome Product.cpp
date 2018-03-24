@@ -1,8 +1,4 @@
-/*
- * n = 2, [10 - 99] [10^2 - 99^2]  ->palindrom
- *
- */
-#include "0.config.h"
+#include "0. config.h"
 
 class Solution
 {

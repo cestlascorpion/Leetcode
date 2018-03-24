@@ -1,4 +1,4 @@
-#include "0.config.h"
+#include "0. config.h"
 
 class Solution
 {
@@ -36,7 +36,7 @@ class Solution2
         return cur;
     }
 };
-class Solution
+class Solution3
 {
   public:
     int rob(vector<int> &num)

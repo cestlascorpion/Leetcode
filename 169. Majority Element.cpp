@@ -1,7 +1,7 @@
-#include "0.config.h"
+#include "0. config.h"
 class Solution
 {
-  public:
+public:
 	int majorityElement(vector<int> &nums)
 	{
 		int count = 0;

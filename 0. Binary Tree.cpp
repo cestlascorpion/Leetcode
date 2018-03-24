@@ -4,7 +4,7 @@
  * 后序遍历： 左 右 根
  * 层序遍历： level0->level1->...->levelmax(左 右)
  */
-#include "0.config.h"
+#include "0. config.h"
 
 void rePreOrder(TreeNode *root)
 {
@@ -170,7 +170,7 @@ void BreadthFirstTravel(TreeNode *root)
 	TreeNode *p = root;
 	queue<TreeNode *> q;
 	q.push(p);
-	while (!q.empty)
+	while (!q.empty())
 	{
 		p = q.front();
 		std::cout << p->val << std::endl;

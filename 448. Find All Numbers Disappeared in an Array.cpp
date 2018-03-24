@@ -3,7 +3,7 @@
  * 将(数值-1)作为索引将数组中对应位置的数值取相反数
  * 数组中数值仍为正值，则表示没有索引到，即可返回(索引+1)
  */
-#include "0.config.h"
+#include "0. config.h"
 
 class Solution
 {

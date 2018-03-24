@@ -9,9 +9,7 @@
     k - k / 2小元素，于是得到了数据规模变小的同类问题，递归解决
     如果 k / 2 大于某数列个数，所求元素必然不在另一数列的前k / 2个元素中，同上操作就好。
 */
-#include "0.config.h"
-
-#include "0.config.h"
+#include "0. config.h"
 
 class Solution
 {

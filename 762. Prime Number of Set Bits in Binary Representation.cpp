@@ -1,7 +1,4 @@
-//L, R will be integers L <= R in the range [1, 10^6].
-//
-//R - L will be at most 10000.
-#include "0.config.h"
+#include "0. config.h"
 
 class Solution
 {
