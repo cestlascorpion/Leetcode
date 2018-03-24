@@ -1,3 +1,5 @@
+#include "0.config.h"
+
 class Solution
 {
 public:
@@ -25,7 +27,7 @@ public:
     return ans;
   }
 };
-class Solution
+class Solution2
 {
 public:
   vector<int> nextGreaterElement(vector<int> &findNums, vector<int> &nums)

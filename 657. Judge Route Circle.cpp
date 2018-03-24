@@ -1,10 +1,12 @@
+#include "0.config.h"
+
 class Solution
 {
   public:
     bool judgeCircle(string moves)
     {
         int len = moves.length();
-        if (len < 1 || len & 1 == 1)
+        if (len < 1 || (len & 1) == 1)
             return false;
         int UPDO = 0;
         int LERI = 0;
