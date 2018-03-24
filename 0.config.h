@@ -14,6 +14,7 @@
 #include <cmath>
 #include <utility>
 #include <sstream>
+#include <cctype>
 
 using namespace std;
 struct TreeNode
