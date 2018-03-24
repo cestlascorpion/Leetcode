@@ -1,5 +1,4 @@
-#include <string>
-using namespace std;
+#include "0.config.h"
 class Solution
 {
   public:

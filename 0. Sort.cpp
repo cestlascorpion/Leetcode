@@ -16,10 +16,8 @@
  * 冒泡排序是最简单的排序算法，冒泡排序的基本思想是从后往前（或从前往后）两两比较相邻元素的值，若为逆序，则交换它们，直到序列比较完毕。每一趟冒泡都会将一个元素放置到最终的位置上。
  * 时间复杂度 平均 n^2 最差 n^2 最好 n 空间复杂度 1 稳定 简单 
  */
-#include <vector>
-#include <stack>
-#include <queue>
-using namespace std;
+#include "0.config.h"
+
 void BubbleSortR(vector<int> &nums)
 {
     int len = nums.size();
