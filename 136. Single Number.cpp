@@ -1,13 +1,13 @@
-/* 136. Single Number
- * 亦或操作 同零异一 
- * 亦或满足 交换律 和 自反性
- * A XOR B XOR B = A XOR 0 = A
- */
-class Solution {
-public:
-    int singleNumber(vector<int>& nums) {
+#include "0.config.h"
+
+class Solution
+{
+  public:
+    int singleNumber(vector<int> &nums)
+    {
         int result = nums[0];
-        for(int i = 1; i < nums.size(); i++) {
+        for (int i = 1; i < nums.size(); i++)
+        {
             result ^= nums[i];
         }
         return result;

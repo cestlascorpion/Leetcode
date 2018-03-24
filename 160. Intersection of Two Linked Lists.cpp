@@ -1,3 +1,5 @@
+#include "0.config.h"
+
 class Solution
 {
   public:
@@ -20,15 +22,7 @@ class Solution
 //b+c+a +c
 //因此在走过a+b+c长度后会在c相遇，也是需要返回的交叉点
 //而且会同时走完
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-class Solution
+class Solution2
 {
   public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)

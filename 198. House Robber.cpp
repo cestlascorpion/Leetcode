@@ -1,8 +1,5 @@
-/*
- 动态规划问题
- 数组f(n)存储 遍历到num[k]时的最优结果
- 改最优结果是 max(选中当前num[k]+在num[k-2]时的最优结果, 前一个的最优结果)
-*/
+#include "0.config.h"
+
 class Solution
 {
   public:
@@ -24,7 +21,7 @@ class Solution
         return f[n - 1];
     }
 };
-class Solution
+class Solution2
 {
   public:
     int rob(vector<int> &nums)

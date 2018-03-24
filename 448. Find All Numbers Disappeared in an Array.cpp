@@ -3,10 +3,14 @@
  * 将(数值-1)作为索引将数组中对应位置的数值取相反数
  * 数组中数值仍为正值，则表示没有索引到，即可返回(索引+1)
  */
-class Solution {
-public:
-	vector<int> findDisappearedNumbers(vector<int>& nums) {
-        /*
+#include "0.config.h"
+
+class Solution
+{
+  public:
+	vector<int> findDisappearedNumbers(vector<int> &nums)
+	{
+		/*
 		map<int, int> mymap;
 		map<int, int>::iterator it;
 		vector<int> result;
@@ -29,19 +33,19 @@ public:
 		}
 		return result;
         */
-        vector<int> result;
-        int len = nums.size();
-        int index;
-        for(int i = 0; i < len; i++)
-        {
-            index = abs(nums.at(i)) - 1;
-            nums.at(index) = nums.at(index)>0? -nums.at(index):nums.at(index);
-        }
-        for(int i = 0; i < len; i++)
-        {
-            if(nums.at(i) > 0)
-                result.push_back(i+1);
-        }
-        return result;
+		vector<int> result;
+		int len = nums.size();
+		int index;
+		for (int i = 0; i < len; i++)
+		{
+			index = abs(nums.at(i)) - 1;
+			nums.at(index) = nums.at(index) > 0 ? -nums.at(index) : nums.at(index);
+		}
+		for (int i = 0; i < len; i++)
+		{
+			if (nums.at(i) > 0)
+				result.push_back(i + 1);
+		}
+		return result;
 	}
 };

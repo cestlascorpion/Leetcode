@@ -1,10 +1,8 @@
-/* 70. Climbing Stairs
- * 斐波那契数列 f(n) = f(n-2) + f(n-1)
- * 到达第n阶的方法 = 到达第n-2阶的方法 + 到达第n-1阶的方法 f(1) = 1 f(2) = 2
- * 递归耗时太长，使用递推求解
- */
-class Solution {
-public:
+#include "0.config.h"
+
+class Solution
+{
+  public:
     int climbStairs(int n)
     {
         /*
@@ -21,11 +19,11 @@ public:
         
         return sum;
         */
-        if(n<=2)
+        if (n <= 2)
             return n;
         int onestep = 1;
         int twostep = 2;
-        for(int i = 3; i <= n; i ++)
+        for (int i = 3; i <= n; i++)
         {
             int sum = onestep + twostep;
             onestep = twostep;
