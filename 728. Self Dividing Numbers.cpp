@@ -1,3 +1,5 @@
+#include "0.config.h"
+
 class Solution
 {
   public:
@@ -60,7 +62,7 @@ class Solution
         return true;
     }
 };
-class Solution
+class Solution2
 {
   public:
     vector<int> selfDividingNumbers(int left, int right)

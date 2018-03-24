@@ -1,3 +1,5 @@
+#include "0.config.h"
+
 class Solution
 {
   public:
@@ -17,7 +19,7 @@ class Solution
         return ans;
     }
 };
-class Solution
+class Solution2
 {
   public:
     int numJewelsInStones(string J, string S)
