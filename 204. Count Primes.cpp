@@ -5,14 +5,6 @@ class Solution
   public:
     int countPrimes(int n)
     {
-    }
-};
-
-class Solution2
-{
-  public:
-    int countPrimes(int n)
-    {
         vector<bool> notPrime(n, false);
         int count = 0;
         for (int i = 2; i < n; i++)
