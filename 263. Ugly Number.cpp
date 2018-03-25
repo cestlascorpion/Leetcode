@@ -42,7 +42,7 @@ class Solution
         uglynumber[0] = 1;
         int nextUglyIndex = 1;
 
-        int p2, p3, p5 = 1;
+        int p2, p3, p5 = 0;
 
         while (nextUglyIndex < n)
         {
