@@ -16,6 +16,7 @@
 #include <utility>
 #include <sstream>
 #include <cctype>
+#include <bitset>
 
 using namespace std;
 struct TreeNode
