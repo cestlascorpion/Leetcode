@@ -5,13 +5,7 @@
  *                 归并  
  *                 基数
  * 稳定 ： 直接插入 冒泡 归并 基数 
- * 直接插入：n小时较好
- * 直接选择：n小时较好
- * 堆排序：n大时较好
- * 冒泡排序：n小时较好
- * 归并排序：n大时较好
  */
-
 /*
  * 冒泡排序是最简单的排序算法，冒泡排序的基本思想是从后往前（或从前往后）两两比较相邻元素的值，若为逆序，则交换它们，直到序列比较完毕。每一趟冒泡都会将一个元素放置到最终的位置上。
  * 时间复杂度 平均 n^2 最差 n^2 最好 n 空间复杂度 1 稳定 简单 
@@ -223,46 +217,30 @@ void MergeSort2(vector<int> &nums)
 /* 堆排序
  * 时间复杂度 平均 最坏 最好 nlogn 空间复杂度 n 不稳定 复杂
  */
-void HeapAdjust(vector<int> &nums, int root, int size)
+void HeapAdjust(vector<int> &nums, int root, int n)
 {
-    //左孩子
-    int maxChild = 2 * root + 1; // store the max of  leftChild and rightChild
-    //若有左孩子
-    if (maxChild <= size - 1)
+    int i = root;      //root
+    int j = 2 * i + 1; //leftchild
+    while (j < n)
     {
-        //右孩子
-        int maxChild2 = maxChild + 1;
-        //若有右孩子
-        if (maxChild2 <= size - 1)
+        if (j < n - 1 && nums[j] > nums[j + 1])
+            j = j + 1; //min(left,right)
+        if (nums[i] < nums[j])
+            break;
+        else
         {
-            if (nums[maxChild] < nums[maxChild2])
-            {
-                maxChild = maxChild2;
-            }
-        }
-
-        if (nums[root] < nums[maxChild])
-        {
-            swap(nums[root], nums[maxChild]);
-            HeapAdjust(nums, maxChild, size);
+            swap(nums[i], nums[j]);
+            i = j;
+            j = 2 * i + 1;
         }
     }
 }
-//  6 9 4 8 5 8 5 7
-//  0 1 2 3 4 5 6 7
-//           0
-//       1     2
-//    3  4  5  6
-//  7  8
 void HeapSort(vector<int> &nums)
 {
-    int size = nums.size();
-    for (int i = size / 2 - 1; i >= 0; i--) //7/2-1 =2  8/2-1=3
-    {
-        HeapAdjust(nums, i, size);
-    }
-
-    for (int i = size - 1; i > 0; i--)
+    int n = nums.size();
+    for (int i = n / 2 - 1; i >= 0; i--)
+        HeapAdjust(nums, i, n);
+    for (int i = n - 1; i > 0; i--)
     {
         swap(nums[0], nums[i]);
         HeapAdjust(nums, 0, i);
