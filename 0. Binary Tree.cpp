@@ -80,47 +80,8 @@ void noRePostOrder(TreeNode *root)
 {
 	if (root == NULL)
 		return;
-	TreeNode *pCur = root;
-	TreeNode *pPre = NULL;
-	stack<TreeNode *> s;
-	while (pCur)
-	{
-		if (pCur)
-		{
-			s.push(pCur);
-			pCur = pCur->left; //把pCur移动到左子树的最下边
-		}
-	}
-	while (!s.empty())
-	{
-		//走到这里，pCur都是空，并已经遍历到左子树底端(看成扩充二叉树，则空，亦是某棵树的左孩子)
-		pCur = s.top();
-		s.pop();
-		if (pCur->right == NULL || pCur->right == pPre)
-		{
-			std::cout << pCur->val << std::endl;
-			pPre = pCur; //pPre指向打印过的节点
-		}
-		else
-		{
-			//根节点再次入栈
-			s.push(pCur);
-			//进入右子树，且可肯定右子树一定不为空
-			pCur = pCur->right;
-			while (pCur)
-			{
-				s.push(pCur);
-				pCur = pCur->left;
-			}
-		}
-	}
-}
-void noRePostOrder2(TreeNode *root)
-{
-	if (root == NULL)
-		return;
 	TreeNode *temp = root;
-	TreeNode *pre = root;
+	TreeNode *pre = NULL;
 	stack<TreeNode *> s;
 
 	while (temp || !s.empty())
@@ -180,5 +141,33 @@ void BreadthFirstTravel(TreeNode *root)
 			q.push(p->left);
 		if (p->right)
 			q.push(p->right);
+	}
+}
+void noRePostOrder1(TreeNode *root)//Iterative solution using stack
+{
+	stack<TreeNode *> toVisit;
+	TreeNode *curNode = root;
+	TreeNode *lastNode = nullptr;
+	while (!toVisit.empty() || curNode != nullptr)
+	{
+		if (curNode != nullptr)
+		{
+			toVisit.push(curNode);
+			curNode = curNode->left;
+		}
+		else
+		{
+			TreeNode *topNode = toVisit.top();
+			if (topNode->right != nullptr && lastNode != topNode->right)
+			{
+				curNode = topNode->right;
+			}
+			else
+			{
+				cout << topNode->val;
+				lastNode = topNode;
+				toVisit.pop();
+			}
+		}
 	}
 }
