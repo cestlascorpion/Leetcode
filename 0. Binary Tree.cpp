@@ -143,7 +143,7 @@ void BreadthFirstTravel(TreeNode *root)
 			q.push(p->right);
 	}
 }
-void noRePostOrder1(TreeNode *root)//Iterative solution using stack
+void noRePostOrder1(TreeNode *root) //Iterative solution using stack
 {
 	stack<TreeNode *> toVisit;
 	TreeNode *curNode = root;
