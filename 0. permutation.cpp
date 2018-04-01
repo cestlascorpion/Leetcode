@@ -16,6 +16,7 @@ class Solution
             permutationHelper(nums, i, ans);
             swap(nums[begin], nums[i]);
         }
+        return ans;
     }
     void permutationHelper(vector<int> &nums, int i, vector<vector<int>> &ans) 
     {
