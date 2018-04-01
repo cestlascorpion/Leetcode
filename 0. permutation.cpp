@@ -2,7 +2,7 @@
 
 class Solution
 {
-    public:
+  public:
     vector<vector<int>> premutatuion(vector<int> &nums)
     {
         int begin = 0;
