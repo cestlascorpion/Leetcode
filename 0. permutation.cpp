@@ -9,7 +9,7 @@ class Solution
         int end = nums.size() - 1;
         vector<vector<int>> ans;
         if (begin >= end)
-        return ans;
+            return ans;
         for (int i = begin; i <= end; i++)
         {
             swap(nums[begin], nums[i]);
@@ -18,7 +18,7 @@ class Solution
         }
         return ans;
     }
-    void permutationHelper(vector<int> &nums, int i, vector<vector<int>> &ans) 
+    void permutationHelper(vector<int> &nums, int i, vector<vector<int>> &ans)
     {
     }
 };
