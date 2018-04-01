@@ -21,7 +21,7 @@ class Solution
         return max(leftAndright, uperAndlower);
     }
 };
-class Solution2s
+class Solution2
 {
   public:
     int rob(TreeNode *root)
@@ -53,5 +53,26 @@ class Solution2s
         if (!root)
             return 0;
         return root->val;
+    }
+};
+class Solution3
+{
+  public:
+    int tryRob(TreeNode *root, int &l, int &r)
+    {
+        if (!root)
+            return 0;
+
+        int ll = 0, lr = 0, rl = 0, rr = 0;
+        l = tryRob(root->left, ll, lr);
+        r = tryRob(root->right, rl, rr);
+
+        return max(root->val + ll + lr + rl + rr, l + r);
+    }
+
+    int rob(TreeNode *root)
+    {
+        int l, r;
+        return tryRob(root, l, r);
     }
 };
