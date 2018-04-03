@@ -9,16 +9,22 @@ class Solution
         int end = nums.size() - 1;
         vector<vector<int>> ans;
         if (begin >= end)
+            return ans;
+        premutatuionhelper(nums, begin, end, ans);
         return ans;
+    }
+    void premutatuionhelper(vector<int> nums, int begin, int end, vector<vector<int>> &ans)
+    {
+        if (begin == end)
+        {
+            ans.push_back(nums);
+            return;
+        }
         for (int i = begin; i <= end; i++)
         {
             swap(nums[begin], nums[i]);
-            permutationHelper(nums, i, ans);
+            premutatuionhelper(nums, begin + 1, end, ans);
             swap(nums[begin], nums[i]);
         }
-        return ans;
-    }
-    void permutationHelper(vector<int> &nums, int i, vector<vector<int>> &ans) 
-    {
     }
 };

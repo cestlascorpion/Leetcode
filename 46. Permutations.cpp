@@ -6,25 +6,23 @@ class Solution
     vector<vector<int>> permute(vector<int> &nums)
     {
         vector<vector<int>> ans;
-        int n = nums.size();
-        if (n <= 0)
+        if (nums.size() <= 0)
             return ans;
-        vector<int> v;
-        helper(nums, 0, ans);
+        backTrack(nums, 0, ans);
         return ans;
     }
-    void helper(vector<int> &nums, int begin, vector<vector<int>> &ans)
+    void backTrack(vector<int> nums, int begin, vector<vector<int>> &ans)
     {
-        if (begin >= nums.size())
+        if (begin == nums.size())
         {
             ans.push_back(nums);
             return;
         }
-        for (int i = begin; i < nums.size(); i++)
+        for (int i = begin; begin < nums.size(); i++)
         {
-            swap(nums[begin, nums[i]]);
-            helper(nums.begin + 1, ans);
-            swap(nums[begin, nums[i]]);
+            swap(nums[i], nums[begin]);
+            backTrack(nums, begin + 1, ans);
+            swap(nums[i], nums[begin]);
         }
     }
 };
