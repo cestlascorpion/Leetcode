@@ -141,44 +141,13 @@ void ShellSort(vector<int> &nums)
 /*合并排序采用分治算法，思路是将两个或以上的有序表合并为一个有序表，把待排序的序列分割成若干个子序列，每个子序列有序，然后再把子序列合并为一个有序序列。若将两个有序表合并成一个有序表，则成为2路合并排序。2路归并即使将2个有序表组合成一个新的有序表。假定待排序表有n个元素，则可以看成是n个有序的字表，每个子表长度为1，然后两两归并…不停重复，直到合并成一个长度为n的有序列表为止。Merge()函数是将前后相邻的两个有序表归并为一个有序表，设A[low…mid]和A[mid+1…high]存放在同一顺序表的相邻位置上，先将他们复制到辅助数组B中，每次从对应B中的两个段取出一个元素进行比较，将较小者放入A中。
  * 时间复杂度 平均 nlogn 最坏 nlogn 最好 nlogn 空间复杂度 n 稳定 复杂
  */
-void mMerge(vector<int> &nums, int left, int mid, int right)
+void merge(vector<int> &nums, int low, int mid, int high)
 {
-    int k = right - left + 1;
-    vector<int> tmpArray(k);
-    int p = right, q = mid;
-    while (p > mid && q >= left)
-    {
-        if (nums[p] > nums[q])
-            tmpArray[--k] = nums[p--];
-        else
-            tmpArray[--k] = nums[q--];
-    }
-    while (p > mid)
-        tmpArray[--k] = nums[p--];
-    while (q >= left)
-        tmpArray[--k] = nums[q--];
-
-    k = right - left + 1;
-    for (int i = 0; i < k; i++)
-        nums[left + i] = tmpArray[i];
-}
-void partion(vector<int> &nums, int left, int right)
-{
-    if (left < right)
-    {
-        int mid = left + (right - left) / 2;
-        partion(nums, left, mid);
-        partion(nums, mid + 1, right);
-        mMerge(nums, left, mid, right);
-    }
-}
-void merge2(vector<int> &nums, int low, int mid, int high)
-{
-    int i = low, j = mid + 1, k = low;
     vector<int> temp(nums.size());
-    for (int k = low; k < nums.size(); k++)
+    for (int k = low; k <= high; k++)
         temp[k] = nums[k];
 
+    int i = low, j = mid + 1, k = low;
     while (i <= mid && j <= high)
     {
         if (temp[i] < temp[j])
@@ -193,21 +162,17 @@ void merge2(vector<int> &nums, int low, int mid, int high)
         while (j <= high)
             nums[k++] = temp[j++];
 }
-void MergeSort(vector<int> &nums)
-{
-    int len = nums.size();
-    partion(nums, 0, len - 1);
-}
 void topDownMergeSort(vector<int> &nums, int low, int high)
 {
-    if (low <= high)
-        return;
-    int mid = (low + high) >> 1;
-    topDownMergeSort(nums, low, mid);
-    topDownMergeSort(nums, mid + 1, high);
-    merge2(nums, low, mid, high);
+    if (low < high)
+    {
+        int mid = (low + high) >> 1;
+        topDownMergeSort(nums, low, mid);
+        topDownMergeSort(nums, mid + 1, high);
+        merge(nums, low, mid, high);
+    }
 }
-void MergeSort2(vector<int> &nums)
+void MergeSort(vector<int> &nums)
 {
     if (nums.size() < 1)
         return;
