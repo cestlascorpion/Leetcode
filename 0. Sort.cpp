@@ -65,8 +65,6 @@ int Partion(vector<int> &nums, int left, int right)
 }
 void QuickSort(vector<int> &nums, int left, int right)
 {
-    //int left = 0;
-    //int right = nums.size() - 1;
     if (left < right)
     {
         int pos = Partion(nums, left, right);
@@ -90,6 +88,7 @@ void SelectSort(vector<int> &nums)
             if (min > nums[j]) //找到第i个元素后面所有元素最小元素的索引
             {
                 cur = j;
+                min = nums[j];
             }
         }
         swap(nums[i], nums[cur]);
@@ -121,21 +120,13 @@ void InsertSort(vector<int> &nums)
 void ShellSort(vector<int> &nums)
 {
     int len = nums.size();
-    int d = len / 2;
-    while (d >= 1)
+    for (int d = len / 2; d > 0; d = d / 2)
     {
-        int temp;
         for (int i = d; i < len; i++)
         {
-            temp = nums[i];
-            int j;
-            for (j = i - d; j >= 0 && temp < nums[j]; j = j - d)
-            {
-                nums[j + d] = temp;
-            }
-            nums[j + d] = temp;
+            for (int j = i - d; j >= 0 && nums[j] > nums[j + d]; j = j - d)
+                swap(nums[j], nums[j + d]);
         }
-        d = d / 2;
     }
 }
 /*合并排序采用分治算法，思路是将两个或以上的有序表合并为一个有序表，把待排序的序列分割成若干个子序列，每个子序列有序，然后再把子序列合并为一个有序序列。若将两个有序表合并成一个有序表，则成为2路合并排序。2路归并即使将2个有序表组合成一个新的有序表。假定待排序表有n个元素，则可以看成是n个有序的字表，每个子表长度为1，然后两两归并…不停重复，直到合并成一个长度为n的有序列表为止。Merge()函数是将前后相邻的两个有序表归并为一个有序表，设A[low…mid]和A[mid+1…high]存放在同一顺序表的相邻位置上，先将他们复制到辅助数组B中，每次从对应B中的两个段取出一个元素进行比较，将较小者放入A中。
