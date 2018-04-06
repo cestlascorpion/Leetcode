@@ -17,7 +17,6 @@
 #include <sstream>
 #include <cctype>
 #include <bitset>
-
 using namespace std;
 struct TreeNode
 {
@@ -33,3 +32,4 @@ struct ListNode
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
 };
+#pragma onece
