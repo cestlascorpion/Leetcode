@@ -1,0 +1,15 @@
+#include "000.config.h"
+
+class Solution
+{
+  public:
+    int maxDepth(TreeNode *root)
+    {
+        if (root == NULL)
+        {
+            return 0;
+        }
+        else
+            return 1 + max(maxDepth(root->left), maxDepth(root->right));
+    }
+};

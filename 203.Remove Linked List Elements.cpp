@@ -1,4 +1,4 @@
-#include "0. config.h"
+#include "000.config.h"
 
 class Solution
 {
@@ -15,7 +15,7 @@ class Solution
                 return nullptr;
         }
 
-        ListNode *p = head; //head即为待返回的头结点
+        ListNode *p = head;
         while (p->next != nullptr)
         {
             if (p->next->val == val)
