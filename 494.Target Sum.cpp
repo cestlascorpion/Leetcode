@@ -1,4 +1,5 @@
 #include "000.config.h"
+
 class Solution
 {
   public:
