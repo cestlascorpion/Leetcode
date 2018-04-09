@@ -29,20 +29,46 @@ class Solution
         }
     }
 };
-class Solution2
+class Solution2 //三人借书，三人还书
 {
   public:
-    vector<string> generateParenthesis(int n)
+    vector<vector<char>> generation(vector<char> &in, vector<char> &out)
     {
-        vector<string> ans;
-        if (n == 0)
+        vector<vector<char>> ans;
+        if (in.size() != out.size())
             return ans;
-        for (int c = 0; c < n; c++)
+        int n = (in.size() + out.size()) / 2;
+        vector<char> ch;
+        ch.insert(ch.end(), in.begin(), in.end());
+        ch.insert(ch.end(), out.begin(), out.end());
+        helper(ans, ch, 0, 0, n, in, out, 0);
+        return ans;
+    }
+    void helper(vector<vector<char>> &ans, vector<char> ch, int i, int o, int n, vector<char> &in, vector<char> &out, int loc)
+    {
+        if (i == o && loc == 2 * n)
         {
-            for (string left : generateParenthesis(c))
+            ans.push_back(ch);
+            return;
+        }
+        else
+        {
+            for (int index = loc; index < 2 * n; index++)
             {
-                for (string right : generateParenthesis(n - 1 - c))
-                    ans.push_back("(" + left + ")" + right);
+                if (ch[index] >= 'A' && ch[index] <= 'Z')
+                    i++;
+                if (ch[index] >= 'a' && ch[index] <= 'z')
+                    o++;
+                if (i >= o)
+                {
+                    swap(ch[index], ch[loc]);
+                    helper(ans, ch, i, o, n, in, out, loc + 1);
+                    swap(ch[index], ch[loc]);
+                }
+                if (ch[index] >= 'A' && ch[index] <= 'Z')
+                    i--;
+                if (ch[index] >= 'a' && ch[index] <= 'z')
+                    o--;
             }
         }
     }
