@@ -92,8 +92,9 @@ void BreadthFirstTravel(TreeNode *root) {
     q.pop();
 
     if (p->left)
-      if (p->right)
-        q.push(p->right);
+      q.push(p->left);
+    if (p->right)
+      q.push(p->right);
   }
 }
 void noRePostOrder1(TreeNode *root) // Iterative solution using stack
