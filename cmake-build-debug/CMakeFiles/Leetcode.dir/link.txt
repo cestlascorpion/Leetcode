@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Leetcode.dir/main.cpp.o CMakeFiles/Leetcode.dir/BinaryTree/BinaryTree.cpp.o CMakeFiles/Leetcode.dir/Sort/Sort.cpp.o  -o Leetcode 
