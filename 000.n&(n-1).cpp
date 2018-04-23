@@ -1,10 +1,8 @@
 #include "000.config.h"
 
-int f(unsigned int n)
-{
+int f(unsigned int n) {
   unsigned int m = 0;
-  for (m = 0; n; ++m)
-  {
+  for (m = 0; n; ++m) {
     n &= (n - 1);
   }
   return m;

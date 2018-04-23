@@ -1,35 +1,33 @@
-#include <vector>
-#include <stack>
-#include <map>
-#include <queue>
-#include <string>
 #include <algorithm>
+#include <bitset>
+#include <cctype>
+#include <cmath>
+#include <functional>
 #include <iostream>
+#include <limits.h>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
-#include <limits.h>
-#include <set>
-#include <numeric>
-#include <functional>
-#include <numeric>
-#include <cmath>
 #include <utility>
-#include <sstream>
-#include <cctype>
-#include <bitset>
+#include <vector>
+
 using namespace std;
-struct TreeNode
-{
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+struct TreeNode {
+  int val;
+  TreeNode *left;
+  TreeNode *right;
+  TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-struct ListNode
-{
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
+struct ListNode {
+  int val;
+  ListNode *next;
+  ListNode(int x) : val(x), next(NULL) {}
 };
 #pragma onece
