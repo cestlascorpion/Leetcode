@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hans/CLionProjects/Leetcode/BinaryTree/BinaryTree.cpp" "/home/hans/CLionProjects/Leetcode/cmake-build-debug/CMakeFiles/Leetcode.dir/BinaryTree/BinaryTree.cpp.o"
-  "/home/hans/CLionProjects/Leetcode/Sort/Sort.cpp" "/home/hans/CLionProjects/Leetcode/cmake-build-debug/CMakeFiles/Leetcode.dir/Sort/Sort.cpp.o"
-  "/home/hans/CLionProjects/Leetcode/main.cpp" "/home/hans/CLionProjects/Leetcode/cmake-build-debug/CMakeFiles/Leetcode.dir/main.cpp.o"
+  "C:/Users/cestl/Documents/GitHub/Leetcode/BinaryTree/BinaryTree.cpp" "C:/Users/cestl/Documents/GitHub/Leetcode/cmake-build-debug/CMakeFiles/Leetcode.dir/BinaryTree/BinaryTree.cpp.obj"
+  "C:/Users/cestl/Documents/GitHub/Leetcode/Sort/Sort.cpp" "C:/Users/cestl/Documents/GitHub/Leetcode/cmake-build-debug/CMakeFiles/Leetcode.dir/Sort/Sort.cpp.obj"
+  "C:/Users/cestl/Documents/GitHub/Leetcode/main.cpp" "C:/Users/cestl/Documents/GitHub/Leetcode/cmake-build-debug/CMakeFiles/Leetcode.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

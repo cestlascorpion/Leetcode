@@ -3,4 +3,9 @@ project(Leetcode)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Leetcode main.cpp BinaryTree/BinaryTree.cpp BinaryTree/BinaryTree.h config.h Sort/Sort.cpp Sort/Sort.h)
+add_executable(Leetcode main.cpp
+        config.h
+        BinaryTree/BinaryTree.cpp
+        BinaryTree/BinaryTree.h
+        Sort/Sort.cpp
+        Sort/Sort.h)
