@@ -25,4 +25,4 @@ add_executable(Leetcode
         Sort/Sort.cpp
         Sort/Sort.h
         config.h
-        main.cpp Leetcode136/Leetcode136.cpp Leetcode136/Leetcode136.h Leetcode350/Leetcode350.cpp Leetcode350/Leetcode350.h Leetcode66/Leetcode66.cpp Leetcode66/Leetcode66.h)
+        main.cpp Leetcode136/Leetcode136.cpp Leetcode136/Leetcode136.h Leetcode350/Leetcode350.cpp Leetcode350/Leetcode350.h Leetcode66/Leetcode66.cpp Leetcode66/Leetcode66.h Leetcode5/Leetcode5.cpp Leetcode5/Leetcode5.h Leetcode1/Leetcode1.cpp Leetcode1/Leetcode1.h Leetcode36/Leecode36.cpp Leetcode36/Leecode36.h Leetcode48/Leetcode48.cpp Leetcode48/Leetcode48.h)
