@@ -66,14 +66,14 @@ void Sort::InsertSort(vector<int> &nums) {
     }
 }
 
-// use d instead of 1
-// add another loop to InsertSort
+//use d instead of 1
+//add another loop to InsertSort
 void Sort::ShellSort(vector<int> &nums) {
     if (nums.empty())
         return;
     for (int d = (int) (nums.size() >> 1); d > 0; d = d >> 1) {
         for (int i = d; i < nums.size(); ++i) {
-            for (int j = i - d; j >= 0 && nums[j + d] < nums[j]; j -= d) {
+            for (int j = i - d; j >= 0 && nums[j + d] < nums[j]; --j) {
                 swap(nums[j], nums[j + d]);
             }
         }
@@ -115,11 +115,11 @@ void Sort::domerge(vector<int> &nums, int low, int mid, int high) {
 void Sort::HeapSort(vector<int> &nums) {
     if (nums.empty())
         return;
-    // make heap
+    //make heap
     for (int i = nums.size() / 2 - 1; i >= 0; --i) {
         heapdajust(nums, i, nums.size());
     }
-    // heap adjust
+    //heap adjust
     for (int i = nums.size() - 1; i > 0; --i) {
         swap(nums[i], nums[0]);
         heapdajust(nums, 0, i);
@@ -132,13 +132,10 @@ void Sort::heapdajust(vector<int> &nums, int root, int n) {
     while (j < n) {
         if (j + 1 < n && nums[j + 1] > nums[j])
             j = j + 1;
-        if (nums[j] <= nums[i])
-            break;
-        else {
+        if (nums[j] > nums[i])
             swap(nums[i], nums[j]);
-            i = j;
-            j = 2 * i + 1;
-        }
+        i = j;
+        j = 2 * i + 1;
     }
 }
 
@@ -146,38 +143,37 @@ void Sort::testSort() {
 
     vector<int> nums;
 
-    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 3, 5, 11, 14, 2};
-    MergeSort(nums);
-    printsortans(nums);
-
-    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 3, 5, 11, 14, 2};
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     BubbleSort(nums);
     printsortans(nums);
 
-    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 3, 5, 11, 14, 2};
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     QuickSort(nums);
     printsortans(nums);
 
-    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 3, 5, 11, 14, 2};
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     SelectSort(nums);
     printsortans(nums);
 
-    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 3, 5, 11, 14, 2};
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     InsertSort(nums);
     printsortans(nums);
 
-    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 3, 5, 11, 14, 2};
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     ShellSort(nums);
     printsortans(nums);
 
-    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 3, 5, 11, 14, 2};
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
+    MergeSort(nums);
+    printsortans(nums);
+
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     HeapSort(nums);
     printsortans(nums);
 }
 
 void Sort::printsortans(vector<int> &ans) {
     for (auto item : ans)
-        cout << item << " ";
+        cout << item << "\t";
     cout << endl;
-    cout << "____________________________________" << endl;
 }

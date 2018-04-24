@@ -1,3 +1,5 @@
-LeetCode Problems' Solutions
-============================
-## Collection of LeetCode Problems' Solutions.
+#Leetcode
+
+collection of leetcode's solutions
+
+env: Ubuntu CLion 
