@@ -17,7 +17,10 @@
 #include <numeric>
 #include <deque>
 #include <utility>
+#include <locale>
+
 using namespace std;
+
 struct TreeNode {
     int val;
     TreeNode *left;

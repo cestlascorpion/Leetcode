@@ -12,6 +12,10 @@ include_directories(Leetcode26)
 include_directories(Sort)
 
 add_executable(Leetcode
+        config.h
+        main.cpp
+        Sort/Sort.cpp
+        Sort/Sort.h
         BinaryTree/BinaryTree.cpp
         BinaryTree/BinaryTree.h
         Leetcode150/Leetcode150.cpp
@@ -22,7 +26,22 @@ add_executable(Leetcode
         Leetcode219/Leetcode219.h
         Leetcode26/Leetcode26.cpp
         Leetcode26/Leetcode26.h
-        Sort/Sort.cpp
-        Sort/Sort.h
-        config.h
-        main.cpp Leetcode136/Leetcode136.cpp Leetcode136/Leetcode136.h Leetcode350/Leetcode350.cpp Leetcode350/Leetcode350.h Leetcode66/Leetcode66.cpp Leetcode66/Leetcode66.h Leetcode5/Leetcode5.cpp Leetcode5/Leetcode5.h Leetcode1/Leetcode1.cpp Leetcode1/Leetcode1.h Leetcode36/Leecode36.cpp Leetcode36/Leecode36.h Leetcode48/Leetcode48.cpp Leetcode48/Leetcode48.h)
+        Leetcode136/Leetcode136.cpp
+        Leetcode136/Leetcode136.h
+        Leetcode350/Leetcode350.cpp
+        Leetcode350/Leetcode350.h
+        Leetcode66/Leetcode66.cpp
+        Leetcode66/Leetcode66.h
+        Leetcode283/Leetcode283.cpp
+        Leetcode1/Leetcode1.cpp
+        Leetcode1/Leetcode1.h
+        Leetcode36/Leecode36.cpp
+        Leetcode36/Leecode36.h
+        Leetcode48/Leetcode48.cpp
+        Leetcode48/Leetcode48.h
+        Leetcode344/Leetcode344.cpp
+        Leetcode344/Leetcode344.h
+        Leetcode7/Leetcode7.cpp
+        Leetcode7/Leetcode7.h
+        Leetcode387/Leetcode387.cpp
+        Leetcode387/Leetcode387.h Leetcode242/Leetcode242.cpp Leetcode242/Leetcode242.h Leetcode125/Leetcode125.cpp Leetcode125/Leetcode125.h Leetcode8/Leetcode8.cpp Leetcode8/Leetcode8.h Leetcode28/Leetcode28.cpp Leetcode28/Leetcode28.h)
