@@ -19,8 +19,8 @@ int main() {
     //std::cout << "Hello, World!" << std::endl;
     //BinaryTree sol;
     //sol.testBinaryTree();
-    //Sort sol;
-    //sol.testSort();
+    Sort sol;
+    sol.testSort();
     //Leetcode26 sol;
     //sol.test26();
     //Leetcode150 sol;
@@ -41,7 +41,7 @@ int main() {
     //sol.test1();
     //Leecode36 sol;
     //sol.test36();
-    Leetcode48 sol;
-    sol.test48();
+    //Leetcode48 sol;
+    //sol.test48();
     return 0;
 }

@@ -43,6 +43,23 @@ int Sort::qsortpartion(vector<int> &nums, int low, int high) {
     return low;
 }
 
+void Sort::QuickSort2(vector<int> &nums) {
+    if (nums.size() < 2)
+        return;
+    stack<pair<int, int>> s;
+    pair<int, int> p(0, nums.size() - 1);
+    s.push(p);
+    while (!s.empty()) {
+        pair<int, int> boundary(s.top().first, s.top().second);
+        s.pop();
+        if (boundary.first < boundary.second) {
+            int pos = qsortpartion(nums, boundary.first, boundary.second);
+            s.push(make_pair(boundary.first,pos-1));
+            s.push(make_pair(pos+1,boundary.second));
+        }
+    }
+}
+
 void Sort::SelectSort(vector<int> &nums) {
     if (nums.empty())
         return;
@@ -149,6 +166,10 @@ void Sort::testSort() {
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     QuickSort(nums);
+    printsortans(nums);
+
+    nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
+    QuickSort2(nums);
     printsortans(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};

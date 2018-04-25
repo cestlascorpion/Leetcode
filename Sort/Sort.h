@@ -15,6 +15,8 @@ public:
 
     void QuickSort(vector<int> &nums);
 
+    void QuickSort2(vector<int> &nums);
+
     void SelectSort(vector<int> &nums);
 
     void InsertSort(vector<int> &nums);
