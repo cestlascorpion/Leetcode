@@ -2,8 +2,8 @@
 // Created by hans on 4/26/18.
 //
 
-#ifndef LEETCODE_LETCODE255_H
-#define LEETCODE_LETCODE255_H
+#ifndef LEETCODE_LEETCODE255_H
+#define LEETCODE_LEETCODE255_H
 
 #include "../config.h"
 
@@ -24,4 +24,4 @@ private:
 };
 
 
-#endif //LEETCODE_LETCODE255_H
+#endif //LEETCODE_LEETCODE255_H
