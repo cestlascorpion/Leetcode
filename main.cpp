@@ -1,5 +1,4 @@
 #include "config.h"
-//#include "Leetcode${Num.}$/Leetcode${Num.}$.h"
 
 using namespace std;
 
