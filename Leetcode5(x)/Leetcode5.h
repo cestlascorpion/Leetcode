@@ -9,7 +9,7 @@
 
 class Leetcode5 {
 public:
-    void moveZeroes(vector<int> &nums);
+    string longestPalindrome(string s) ;
 
     void test5();
 };
