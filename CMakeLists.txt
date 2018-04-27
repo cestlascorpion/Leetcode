@@ -4,9 +4,14 @@ project(Leetcode)
 set(CMAKE_CXX_STANDARD 11)
 
 include_directories(.)
+include_directories(BinaryTree)
+include_directories(Leetcode150)
+include_directories(Leetcode189)
+include_directories(Leetcode219)
+include_directories(Leetcode26)
+include_directories(Sort)
 
-add_executable(
-        Leetcode
+add_executable(Leetcode
         config.h
         main.cpp
         Sort/Sort.cpp
@@ -30,8 +35,8 @@ add_executable(
         Leetcode283/Leetcode283.cpp
         Leetcode1/Leetcode1.cpp
         Leetcode1/Leetcode1.h
-        Leetcode36/Leetcode36.cpp
-        Leetcode36/Leetcode36.h
+        Leetcode36/Leecode36.cpp
+        Leetcode36/Leecode36.h
         Leetcode48/Leetcode48.cpp
         Leetcode48/Leetcode48.h
         Leetcode344/Leetcode344.cpp
@@ -39,52 +44,16 @@ add_executable(
         Leetcode7/Leetcode7.cpp
         Leetcode7/Leetcode7.h
         Leetcode387/Leetcode387.cpp
-        Leetcode387/Leetcode387.h
-        Leetcode242/Leetcode242.cpp
-        Leetcode242/Leetcode242.h
-        Leetcode125/Leetcode125.cpp
-        Leetcode125/Leetcode125.h
-        Leetcode8/Leetcode8.cpp
-        Leetcode8/Leetcode8.h
-        Leetcode28/Leetcode28.cpp
-        Leetcode28/Leetcode28.h
-        Leetcode38/Leetcode38.cpp
-        Leetcode38/Leetcode38.h
-        Leetcode14/Leetcode14.cpp
-        Leetcode14/Leetcode14.h
-        Leetcode237/Leetcode237.cpp
-        Leetcode237/Leetcode237.h
-        Leetcode174/Leetcode174.cpp
-        Leetcode174/Leetcode174.h
-        Leetcode77/Leetcode77.cpp
-        Leetcode77/Leetcode77.h
-        Leetcode21/Leetcode21.cpp
-        Leetcode21/Leetcode21.h
-        Leetcode234/Leetcode234.cpp
-        Leetcode234/Leetcode234.h
-        Leetcode141/Leetcode141.cpp
-        Leetcode141/Leetcode141.h
-        Leetcode104/Leetcode104.cpp
-        Leetcode104/Leetcode104.h
-        Leetcode255/Leetcode255.cpp
-        Leetcode255/Leetcode255.h
-        Leetcode101/Leetcode101.cpp
-        Leetcode101/Leetcode101.h
-        Leetcode102/Leetcode102.cpp
-        Leetcode102/Leetcode102.h
-        Leetcode108/Leetcode108.cpp
-        Leetcode108/Leetcode108.h
-        Leetcode88/Leetcode88.cpp
-        Leetcode88/Leetcode88.h
-        Leetcode278/Leetcode278.cpp
-        Leetcode278/Leetcode278.h
-        Leetcode70/Leetcode70.cpp
-        Leetcode70/Leetcode70.h
-        Leetcode121/Leetcode121.cpp
-        Leetcode121/Leetcode121.h
-        Leetcode53/Leetcode53.cpp
-        Leetcode53/Leetcode53.h
-        Leetcode198/Leetcode198.cpp
-        Leetcode198/Leetcode198.h
-        Leetcode384/Leetcode384.cpp
-        Leetcode384/Leetcode384.h Leetcode155/Leetcode155.cpp Leetcode155/Leetcode155.h)
+        Leetcode387/Leetcode387.h 
+        Leetcode242/Leetcode242.cpp 
+        Leetcode242/Leetcode242.h 
+        Leetcode125/Leetcode125.cpp 
+        Leetcode125/Leetcode125.h 
+        Leetcode8/Leetcode8.cpp 
+        Leetcode8/Leetcode8.h 
+        Leetcode28/Leetcode28.cpp 
+        Leetcode28/Leetcode28.h 
+        Leetcode38/Leetcode38.cpp 
+        Leetcode38/Leetcode38.h 
+        Leetcode14/Leetcode14.cpp 
+        Leetcode14/Leetcode14.h)
