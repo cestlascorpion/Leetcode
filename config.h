@@ -18,6 +18,7 @@
 #include <deque>
 #include <utility>
 #include <locale>
+#include <math.h>
 
 using namespace std;
 
