@@ -121,4 +121,4 @@ add_executable(
         Leetcode3/Leetcode3.cpp
         Leetcode3/Leetcode3.h
         "Leetcode5(x)/Leetcode5.cpp"
-        "Leetcode5(x)/Leetcode5.h")
+        "Leetcode5(x)/Leetcode5.h" Leetcode334/Leetcode334.cpp Leetcode334/Leetcode334.h)
