@@ -1,4 +1,4 @@
-#include "Leetcode200/Leetcode200.h"
+#include "Leetcode17/Leetcode17.h"
 #include "config.h"
 
 
@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
   std::cout << "Hello, World!" << std::endl;
-  Leetcode200 sol;
-  sol.test200();
+  Leetcode17 sol;
+  sol.test17();
   return 0;
 }
