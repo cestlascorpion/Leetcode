@@ -1,11 +1,11 @@
 #include "config.h"
-#include "Leetcode5(x)/Leetcode5.h"
+#include "Leetcode328/Leetcode328.h"
 
 using namespace std;
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    Leetcode5 sol;
-    sol.test5();
+    Leetcode328 sol;
+    sol.test328();
     return 0;
 }
