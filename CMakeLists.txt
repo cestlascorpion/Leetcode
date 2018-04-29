@@ -209,4 +209,22 @@ add_executable(
         Leetcode306x/Leetcode306.cpp
         Leetcode306x/Leetcode306.h
         Leetcode337/Leetcode337.cpp
-        Leetcode337/Leetcode337.h)
+        Leetcode337/Leetcode337.h
+        Leetcode338/Leetcode338.cpp
+        Leetcode338/Leetcode338.h
+        Leetcode347/Leetcode347.cpp
+        Leetcode347/Leetcode347.h
+        Leetcode349/Leetcode349.cpp
+        Leetcode349/Leetcode349.h
+        Leetcode371/Leetcode371.cpp
+        Leetcode371/Leetcode371.h
+        Leetcode383/Leetcode383.cpp
+        Leetcode383/Leetcode383.h
+        Leetcode389/Leetcode389.cpp
+        Leetcode389/Leetcode389.h
+        Leetcode401x/Leetcode401.cpp
+        Leetcode401x/Leetcode401.h
+        Leetcode406/Leetcode406.cpp
+        Leetcode406/Leetcode406.h
+        Leetcode437/leetcode437.cpp
+        Leetcode437/leetcode437.h)

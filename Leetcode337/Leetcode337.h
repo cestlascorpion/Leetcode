@@ -9,9 +9,14 @@
 
 class Leetcode337 {
 public:
+    int rob(TreeNode *root);
+
+    int rob2(TreeNode *root);
+
+private:
     int tryRob(TreeNode *root, int &l, int &r);
 
-    int rob(TreeNode *root);
+    pair<int, int> tryrob2(TreeNode *root);
 };
 
 
