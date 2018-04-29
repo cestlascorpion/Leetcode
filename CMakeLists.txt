@@ -149,4 +149,6 @@ add_executable(
         Leetcode46/Leetcode46.cpp
         Leetcode46/Leetcode46.h
         Leetcode78/Leetcode78.cpp
-        Leetcode78/Leetcode78.h Leetcode79/Leetcode79.cpp Leetcode79/Leetcode79.h)
+        Leetcode78/Leetcode78.h
+        Leetcode79/Leetcode79.cpp
+        Leetcode79/Leetcode79.h)

@@ -8,7 +8,13 @@
 #include "../config.h"
 
 class Leetcode79 {
+public:
+    bool exist(vector<vector<char>> &board, string word);
 
+    void test79();
+
+private:
+    void helper(vector<vector<char>> &board, string word, int begin, int end, int i, int j, bool &ans);
 };
 
 
