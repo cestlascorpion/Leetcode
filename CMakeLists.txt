@@ -165,4 +165,36 @@ add_executable(
         Leetcode40/Leetcode40.cpp
         Leetcode40/Leetcode40.h
         Leetcode47/Leetcode47.cpp
-        Leetcode47/Leetcode47.h)
+        Leetcode47/Leetcode47.h
+        Leetcode67/Leetcode67.cpp
+        Leetcode67/Leetcode67.h
+        Leetcode111/Leetcode111.cpp
+        Leetcode111/Leetcode111.h
+        Leetcode112/Leetcode112.cpp
+        Leetcode112/Leetcode112.h
+        Leetcode113/Leetcode113.cpp
+        Leetcode113/Leetcode113.h
+        Leetcode122/Leetcode122.cpp
+        Leetcode122/Leetcode122.h
+        Leetcode144/Leetcode144.cpp
+        Leetcode144/Leetcode144.h
+        Leetcode145/Leetcode145.cpp
+        Leetcode145/Leetcode145.h
+        Leetcode168/Leetcode168.cpp
+        Leetcode168/Leetcode168.h
+        Leetcode169/Leetcode169.cpp
+        Leetcode169/Leetcode169.h
+        Leetcode171/Leetcode171.cpp
+        Leetcode171/Leetcode171.h
+        Leetcode203/Leetcode203.cpp
+        Leetcode203/Leetcode203.h
+        Leetcode206/Leetcode206.cpp
+        Leetcode206/Leetcode206.h
+        Leetcode213/Leetcode213.cpp
+        Leetcode213/Leetcode213.h
+        Leetcode217/Leetcode217.cpp
+        Leetcode217/Leetcode217.h
+        Leetcode226/Leetcode226.cpp
+        Leetcode226/Leetcode226.h
+        Leetcode238/Leetcode238.cpp
+        Leetcode238/Leetcode238.h)

@@ -89,13 +89,15 @@ vector<int> BinaryTree::Postorder(TreeNode *root) {
             s.push(cur);
             cur = cur->left;
         } else {
-            TreeNode *t = s.top();
-            if (t->right != nullptr && t->right != pre) {
-                cur = t->right;
+            cur = s.top();
+            s.pop();
+            if (cur->right == nullptr || cur->right == pre) {
+                ans.push_back(cur->val);
+                pre = cur;
+                cur = nullptr;
             } else {
-                ans.push_back(t->val);
-                pre = t;
-                s.pop();
+                s.push(cur);
+                cur = cur->right;
             }
         }
     }
