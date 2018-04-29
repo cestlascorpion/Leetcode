@@ -143,4 +143,4 @@ add_executable(
         Leetcode200/Leetcode200.cpp
         Leetcode200/Leetcode200.h
         Leetcode17/Leetcode17.cpp
-        Leetcode17/Leetcode17.h)
+        Leetcode17/Leetcode17.h Leetcode22/Leetcode22.cpp Leetcode22/Leetcode22.h)
