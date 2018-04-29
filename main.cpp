@@ -1,11 +1,11 @@
 #include "config.h"
-#include "Leetcode406/Leetcode406.h"
+#include "Leetcode475/Leetcode475.h"
 
 using namespace std;
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    Leetcode406 sol;
-    sol.test406();
+    Leetcode475 sol;
+    sol.test475();
     return 0;
 }

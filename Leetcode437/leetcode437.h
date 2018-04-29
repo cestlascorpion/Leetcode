@@ -8,7 +8,14 @@
 #include "../config.h"
 
 class leetcode437 {
+public:
+    int pathSum(TreeNode *root, int sum);
 
+    int helper(TreeNode *node, int sum);//path from this node
+
+    int pathSum2(TreeNode *root, int sum);
+
+    int helper2(TreeNode *root, int pre, int &sum);
 };
 
 
