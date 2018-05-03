@@ -8,7 +8,13 @@
 #include "../config.h"
 
 class Leetcode538 {
+public:
+    TreeNode *convertBST(TreeNode *root);
 
+    TreeNode *convertBST2(TreeNode *root);
+
+private:
+    void helper(TreeNode *root, int &sumkey);
 };
 
 

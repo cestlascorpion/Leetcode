@@ -249,4 +249,14 @@ add_executable(
         Leetcode494/Leetcode494.cpp
         Leetcode494/Leetcode494.h
         Leetcode496/Leetcode496.cpp
-        Leetcode496/Leetcode496.h Leetcode500/Leetcode500.cpp Leetcode500/Leetcode500.h Leetcode507/leetcode507.cpp Leetcode507/leetcode507.h Leetcode520/Leetcode520.cpp Leetcode520/Leetcode520.h Leetcode521/Leetcode521.cpp Leetcode521/Leetcode521.h Leetcode538/Leetcode538.cpp Leetcode538/Leetcode538.h)
+        Leetcode496/Leetcode496.h
+        Leetcode500/Leetcode500.cpp
+        Leetcode500/Leetcode500.h
+        Leetcode507/leetcode507.cpp
+        Leetcode507/leetcode507.h
+        Leetcode520/Leetcode520.cpp
+        Leetcode520/Leetcode520.h
+        Leetcode521/Leetcode521.cpp
+        Leetcode521/Leetcode521.h
+        Leetcode538/Leetcode538.cpp
+        Leetcode538/Leetcode538.h)
