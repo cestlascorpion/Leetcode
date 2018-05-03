@@ -339,4 +339,18 @@ add_executable(
         Leetcode784/Leetcode784.cpp
         Leetcode784/Leetcode784.h
         Leetcode746/Leetcode746.cpp
-        Leetcode746/Leetcode746.h)
+        Leetcode746/Leetcode746.h
+        Leetcode75/Leetcode75.cpp
+        Leetcode75/Leetcode75.h 
+        Leetcode215/Leetcode215.cpp 
+        Leetcode215/Leetcode215.h 
+        Leetcode162/Leetcode162.cpp 
+        Leetcode162/Leetcode162.h 
+        Leetcode34/Leetcode34.cpp 
+        Leetcode34/Leetcode34.h 
+        Leetcode56/Leetcode56.cpp 
+        Leetcode56/Leetcode56.h 
+        Leetcode81/Leetcode81.cpp 
+        Leetcode81/Leetcode81.h 
+        Leetcode240/Leetcode240.cpp 
+        Leetcode240/Leetcode240.h)

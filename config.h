@@ -34,7 +34,7 @@ struct ListNode {
     int val;
     ListNode *next;
 
-    ListNode(int x) : val(x), next(NULL) {}
+    ListNode(int x) : val(x), next(nullptr) {}
 };
 
 
@@ -42,7 +42,7 @@ struct TreeLinkNode {
     int val;
     TreeLinkNode *left, *right, *next;
 
-    TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+    TreeLinkNode(int x) : val(x), left(nullptr), right(nullptr), next(nullptr) {}
 };
 
 #pragma once
