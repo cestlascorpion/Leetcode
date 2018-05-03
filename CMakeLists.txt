@@ -353,4 +353,10 @@ add_executable(
         Leetcode81/Leetcode81.cpp 
         Leetcode81/Leetcode81.h 
         Leetcode240/Leetcode240.cpp 
-        Leetcode240/Leetcode240.h)
+        Leetcode240/Leetcode240.h
+        Leetcode55/Leetcode55.cpp
+        Leetcode55/Leetcode55.h
+        Leetcode62/Leetcode62.cpp
+        Leetcode62/Leetcode62.h
+        Leetcode322/Leetcode322.cpp
+        Leetcode322/Leetcode322.h Leetcode300x/Leetcode300.cpp Leetcode300x/Leetcode300.h)
