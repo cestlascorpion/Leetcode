@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
+
 project(Leetcode)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -359,4 +360,12 @@ add_executable(
         Leetcode62/Leetcode62.cpp
         Leetcode62/Leetcode62.h
         Leetcode322/Leetcode322.cpp
-        Leetcode322/Leetcode322.h Leetcode300x/Leetcode300.cpp Leetcode300x/Leetcode300.h)
+        Leetcode322/Leetcode322.h
+        Leetcode300x/Leetcode300.cpp
+        Leetcode300x/Leetcode300.h
+        Leetcode251/Leetcode251.cpp
+        Leetcode251/Leetcode251.h
+        Leetcode297/Leetcode297.cpp
+        Leetcode297/Leetcode297.h
+        Leetcode380/Leetcode380.cpp
+        Leetcode380/Leetcode380.h)

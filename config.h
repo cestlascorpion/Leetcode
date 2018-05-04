@@ -6,8 +6,11 @@
 #define LEETCODE_CONFIG_H
 
 #include <iostream>
+#include <string>
+#include <sstream>
 #include <algorithm>
 #include <vector>
+#include <list>
 #include <set>
 #include <map>
 #include <unordered_map>
