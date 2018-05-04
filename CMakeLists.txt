@@ -10,12 +10,12 @@ add_executable(
         Leetcode
         config.h
         main.cpp
-        Sort/Sort.cpp
-        Sort/Sort.h
-        Premutatuion/Premutatuion.cpp
-        Premutatuion/Premutatuion.h
-        BinaryTree/BinaryTree.cpp
-        BinaryTree/BinaryTree.h
+        LeetcodeSort/Sort.cpp
+        LeetcodeSort/Sort.h
+        LeetcodePremutatuion/Premutatuion.cpp
+        LeetcodePremutatuion/Premutatuion.h
+        LeetcodeBinaryTree/BinaryTree.cpp
+        LeetcodeBinaryTree/BinaryTree.h
         Leetcode150/Leetcode150.cpp
         Leetcode150/Leetcode150.h
         Leetcode189/Leetcode189.cpp
