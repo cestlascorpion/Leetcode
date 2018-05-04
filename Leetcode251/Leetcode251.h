@@ -22,22 +22,11 @@ private:
 
 class Leetcode251x {
 public:
-    Leetcode251x(vector<vector<int>> &vec2d) {
-        v = vec2d;
-        x = y = 0;
-    }
+    Leetcode251x(vector<vector<int>> &vec2d);
 
-    int next() {
-        return v[x][y++];
-    }
+    int next();
 
-    bool hasNext() {
-        while (x < v.size() && y == v[x].size()) {
-            ++x;
-            y = 0;
-        }
-        return x < v.size();
-    }
+    bool hasNext();
 
 private:
     vector<vector<int>> v;

@@ -16,8 +16,8 @@ add_executable(
         LeetcodePremutatuion/Premutatuion.h
         LeetcodeBinaryTree/BinaryTree.cpp
         LeetcodeBinaryTree/BinaryTree.h
-        Leetcode150/Leetcode150.cpp
-        Leetcode150/Leetcode150.h
+        Leetcode150x/Leetcode150.cpp
+        Leetcode150x/Leetcode150.h
         Leetcode189/Leetcode189.cpp
         Leetcode189/Leetcode189.h
         Leetcode219/Leetcode219.cpp
@@ -285,8 +285,8 @@ add_executable(
         Leetcode606/Leetcode606.h
         Leetcode617/Leetcode617.cpp
         Leetcode617/Leetcode617.h
-        Leetcode621/Leetcode621.cpp
-        Leetcode621/Leetcode621.h
+        Leetcode621x/Leetcode621.cpp
+        Leetcode621x/Leetcode621.h
         Leetcode628/Leetcode628.cpp
         Leetcode628/Leetcode628.h
         Leetcode633/Leetcode633.cpp
@@ -368,4 +368,16 @@ add_executable(
         Leetcode297/Leetcode297.cpp
         Leetcode297/Leetcode297.h
         Leetcode380/Leetcode380.cpp
-        Leetcode380/Leetcode380.h)
+        Leetcode380/Leetcode380.h 
+        Leetcode202/Leetcode202.cpp 
+        Leetcode202/Leetcode202.h 
+        Leetcode172/Leetcode172.cpp 
+        Leetcode172/Leetcode172.h 
+        Leetcode50/Leetcode50.cpp 
+        Leetcode50/Leetcode50.h 
+        Leetcode69/Leetcode69.cpp 
+        Leetcode69/Leetcode69.h 
+        Leetcode29x/Leetcode29.cpp 
+        Leetcode29x/Leetcode29.h 
+        Leetcode166x/Leetcode166.cpp 
+        Leetcode166x/Leetcode166.h)

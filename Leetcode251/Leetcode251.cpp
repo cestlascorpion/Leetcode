@@ -16,3 +16,20 @@ int Leetcode251::next() {
 bool Leetcode251::hasNext() {
     return i < v.size();
 }
+
+Leetcode251x::Leetcode251x(vector<vector<int>> &vec2d) {
+    v = vec2d;
+    x = y = 0;
+}
+
+int Leetcode251x::next() {
+    return v[x][y++];
+}
+
+bool Leetcode251x::hasNext() {
+    while (x < v.size() && y == v[x].size()) {
+        ++x;
+        y = 0;
+    }
+    return x < v.size();
+}

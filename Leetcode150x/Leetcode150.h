@@ -9,8 +9,7 @@
 
 class Leetcode150 {
 public:
-    int maxProfit(vector<int>& prices);
-    void test150();
+    int evalRPN(vector<string> &tokens);
 
 };
 
