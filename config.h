@@ -22,6 +22,10 @@
 #include <utility>
 #include <locale>
 #include <math.h>
+#include <functional>
+#include <stdexcept>
+#include <memory>
+#include <type_traits>
 
 using namespace std;
 

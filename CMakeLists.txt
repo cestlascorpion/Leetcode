@@ -381,5 +381,7 @@ add_executable(
         Leetcode29x/Leetcode29.h 
         Leetcode166x/Leetcode166.cpp 
         Leetcode166x/Leetcode166.h
-        Singleton/Singleton.cpp
-        Singleton/Singleton.h)
+        Singleton/Singleton.h
+        Observer/Observer.h
+        Visitor/Visitor.h
+        Order/Order.h ObjectPool/ObjectPool.h)
