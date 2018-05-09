@@ -384,4 +384,5 @@ add_executable(
         Singleton/Singleton.h
         Observer/Observer.h
         Visitor/Visitor.h
-        Order/Order.h ObjectPool/ObjectPool.h)
+        Order/Order.h
+        ObjectPool/ObjectPool.h ThreadPool/ThreadPool.h)
