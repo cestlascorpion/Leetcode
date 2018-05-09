@@ -380,4 +380,6 @@ add_executable(
         Leetcode29x/Leetcode29.cpp 
         Leetcode29x/Leetcode29.h 
         Leetcode166x/Leetcode166.cpp 
-        Leetcode166x/Leetcode166.h)
+        Leetcode166x/Leetcode166.h
+        Singleton/Singleton.cpp
+        Singleton/Singleton.h)
