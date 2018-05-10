@@ -1,8 +1,9 @@
+//
+// Created by cestl on 2018/5/10 0010.
+//
 #include "config.h"
 
-using namespace std;
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-
+    std::cout << "Leetcode!" << std::endl;
     return 0;
 }

@@ -17,19 +17,10 @@
 #include <unordered_set>
 #include <queue>
 #include <stack>
-#include <numeric>
 #include <deque>
+#include <cmath>
 #include <utility>
-#include <locale>
-#include <math.h>
-#include <functional>
-#include <stdexcept>
-#include <memory>
-#include <type_traits>
-#include <mutex>
-#include <thread>
-#include <condition_variable>
-#include <atomic>
+#include <numeric>
 
 using namespace std;
 

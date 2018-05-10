@@ -10,12 +10,7 @@ add_executable(
         Leetcode
         config.h
         main.cpp
-        Order/Order.h
-        Visitor/Visitor.h
-        Observer/Observer.h
         Singleton/Singleton.h
-        ObjectPool/ObjectPool.h
-        ThreadPool/ThreadPool.h
         LeetcodeSort/Sort.cpp
         LeetcodeSort/Sort.h
         LeetcodePremutatuion/Premutatuion.cpp
