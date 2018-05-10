@@ -10,6 +10,12 @@ add_executable(
         Leetcode
         config.h
         main.cpp
+        Order/Order.h
+        Visitor/Visitor.h
+        Observer/Observer.h
+        Singleton/Singleton.h
+        ObjectPool/ObjectPool.h
+        ThreadPool/ThreadPool.h
         LeetcodeSort/Sort.cpp
         LeetcodeSort/Sort.h
         LeetcodePremutatuion/Premutatuion.cpp
@@ -379,10 +385,5 @@ add_executable(
         Leetcode69/Leetcode69.h 
         Leetcode29x/Leetcode29.cpp 
         Leetcode29x/Leetcode29.h 
-        Leetcode166x/Leetcode166.cpp 
-        Leetcode166x/Leetcode166.h
-        Singleton/Singleton.h
-        Observer/Observer.h
-        Visitor/Visitor.h
-        Order/Order.h
-        ObjectPool/ObjectPool.h ThreadPool/ThreadPool.h)
+        Leetcode166x/Leetcode166.cpp
+        Leetcode166x/Leetcode166.h)
