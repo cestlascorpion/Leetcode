@@ -17,6 +17,8 @@ add_executable(
         LeetcodePremutatuion/Premutatuion.h
         LeetcodeCombination/LeetcodeCombination.cpp 
         LeetcodeCombination/LeetcodeCombination.h
+        LeetCodePackbag/LeetCodePackBag.cpp 
+        LeetCodePackbag/LeetCodePackBag.h
         LeetcodeBinaryTree/BinaryTree.cpp
         LeetcodeBinaryTree/BinaryTree.h
         Leetcode150x/Leetcode150.cpp
