@@ -129,15 +129,15 @@ add_executable(
         Leetcode5x/Leetcode5.cpp
         Leetcode5x/Leetcode5.h
         Leetcode334/Leetcode334.cpp
-        Leetcode334/Leetcode334.h 
+        Leetcode334/Leetcode334.h
         Leetcode2/Leetcode2.cpp 
-        Leetcode2/Leetcode2.h 
+        Leetcode2/Leetcode2.h
         Leetcode328/Leetcode328.cpp 
-        Leetcode328/Leetcode328.h 
+        Leetcode328/Leetcode328.h
         Leetcode160/Leetcode160.cpp 
-        Leetcode160/Leetcode160.h 
+        Leetcode160/Leetcode160.h
         Leetcode94/Leetcode94.cpp 
-        Leetcode94/Leetcode94.h 
+        Leetcode94/Leetcode94.h
         Leetcode103/Leetcode103.cpp 
         Leetcode103/Leetcode103.h
         Leetcode105/Leetcode105.cpp
@@ -237,11 +237,11 @@ add_executable(
         Leetcode438x/Leetcode438.cpp
         Leetcode438x/Leetcode438.h
         Leetcode448/Leetcode448.cpp
-        Leetcode448/Leetcode448.h 
+        Leetcode448/Leetcode448.h
         Leetcode453/Leetcode453.cpp 
-        Leetcode453/Leetcode453.h 
+        Leetcode453/Leetcode453.h
         Leetcode463/Leetcode463.cpp 
-        Leetcode463/Leetcode463.h 
+        Leetcode463/Leetcode463.h
         Leetcode475/Leetcode475.cpp 
         Leetcode475/Leetcode475.h
         Leetcode476/Leetcode476.cpp
@@ -347,17 +347,17 @@ add_executable(
         Leetcode746/Leetcode746.cpp
         Leetcode746/Leetcode746.h
         Leetcode75/Leetcode75.cpp
-        Leetcode75/Leetcode75.h 
+        Leetcode75/Leetcode75.h
         Leetcode215/Leetcode215.cpp 
-        Leetcode215/Leetcode215.h 
+        Leetcode215/Leetcode215.h
         Leetcode162/Leetcode162.cpp 
-        Leetcode162/Leetcode162.h 
+        Leetcode162/Leetcode162.h
         Leetcode34/Leetcode34.cpp 
-        Leetcode34/Leetcode34.h 
+        Leetcode34/Leetcode34.h
         Leetcode56/Leetcode56.cpp 
-        Leetcode56/Leetcode56.h 
+        Leetcode56/Leetcode56.h
         Leetcode81/Leetcode81.cpp 
-        Leetcode81/Leetcode81.h 
+        Leetcode81/Leetcode81.h
         Leetcode240/Leetcode240.cpp 
         Leetcode240/Leetcode240.h
         Leetcode55/Leetcode55.cpp
@@ -373,18 +373,24 @@ add_executable(
         Leetcode297/Leetcode297.cpp
         Leetcode297/Leetcode297.h
         Leetcode380/Leetcode380.cpp
-        Leetcode380/Leetcode380.h 
+        Leetcode380/Leetcode380.h
         Leetcode202/Leetcode202.cpp 
-        Leetcode202/Leetcode202.h 
+        Leetcode202/Leetcode202.h
         Leetcode172/Leetcode172.cpp 
-        Leetcode172/Leetcode172.h 
+        Leetcode172/Leetcode172.h
         Leetcode50/Leetcode50.cpp 
-        Leetcode50/Leetcode50.h 
+        Leetcode50/Leetcode50.h
         Leetcode69/Leetcode69.cpp 
-        Leetcode69/Leetcode69.h 
+        Leetcode69/Leetcode69.h
         Leetcode29x/Leetcode29.cpp 
-        Leetcode29x/Leetcode29.h 
+        Leetcode29x/Leetcode29.h
         Leetcode166x/Leetcode166.cpp
-        Leetcode166x/Leetcode166.h 
+        Leetcode166x/Leetcode166.h
         Leetcode110/Leetcode110.cpp 
-        Leetcode110/Leetcode110.h)
+        Leetcode110/Leetcode110.h
+        Leetcode98/LeetCode98.cpp 
+        Leetcode98/LeetCode98.h
+        Leetcode152/Leetcode152.cpp 
+        Leetcode152/Leetcode152.h
+        Leetcode146/Leetcode146.cpp 
+        Leetcode146/Leetcode146.h)
