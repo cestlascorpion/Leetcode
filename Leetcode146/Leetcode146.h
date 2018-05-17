@@ -9,20 +9,22 @@
 
 class Leetcode146 {
 public:
-    LRUCache(int capacity) {
+    Leetcode146(int capacity) : m_capacity(capacity) {}
 
-    }
+    int get(int key);
 
-    int get(int key) {
-
-    }
-
-    void put(int key, int value) {
-
-    }
+    void put(int key, int value);
 
 private:
+    struct kvPair {
+        int key, value;
 
+        kvPair(int k, int v) : key(k), value(v) {}
+    };
+
+    list<kvPair> m_LRU_queue;
+    unordered_map<int, list<kvPair>::iterator> m_cache;
+    int m_capacity;
 };
 
 /**

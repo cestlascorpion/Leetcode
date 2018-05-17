@@ -28,8 +28,7 @@ bool LeetCode98::helper(TreeNode *root, int &min_val, int &max_val) {
             max_val = root->right ? rmax : root->val;
             return true;
         }
-    } else {
-        return false;
     }
+    return false;
 }
 
