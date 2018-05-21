@@ -28,3 +28,4 @@ void Leetcode1::test1() {
         cout << item << " ";
     cout << endl;
 }
+

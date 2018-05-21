@@ -6,13 +6,13 @@
 #define LEETCODE_LEETCODE1_H
 
 #include "../config.h"
+#include <ostream>
 
 class Leetcode1 {
 public:
-    vector<int> twoSum(vector<int> &nums, int target);
+  vector<int> twoSum(vector<int> &nums, int target);
 
-    void test1();
+  void test1();
 };
 
-
-#endif //LEETCODE_LEETCODE1_H
+#endif // LEETCODE_LEETCODE1_H
