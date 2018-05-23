@@ -10,8 +10,6 @@
 class Leetcode5 {
 public:
     string longestPalindrome(string s) ;
-
-    void test5();
 };
 
 

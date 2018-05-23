@@ -10,8 +10,6 @@
 class Leetcode5 {
 public:
     void moveZeroes(vector<int> &nums);
-
-    void test5();
 };
 
 

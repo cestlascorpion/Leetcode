@@ -14,10 +14,3 @@ void Leetcode5::moveZeroes(vector<int> &nums) {
     }
 }
 
-void Leetcode5::test5() {
-    vector<int> nums = {1, 0, 3, 12};
-    moveZeroes(nums);
-    for (auto item : nums)
-        cout << item << " ";
-    cout << endl;
-}

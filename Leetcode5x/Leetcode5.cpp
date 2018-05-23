@@ -43,8 +43,3 @@ string Leetcode5::longestPalindrome(string s) {
     return maxPalindrome.empty() ? s.substr(0, 1) : maxPalindrome;
 }
 
-void Leetcode5::test5() {
-    string s = "babad";
-    string ans = longestPalindrome(s);
-    cout << s << " -> " << ans;
-}
