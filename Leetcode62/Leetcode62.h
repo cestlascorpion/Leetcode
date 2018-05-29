@@ -11,6 +11,8 @@ class Leetcode62 {
 public:
     int uniquePaths(int m, int n);
 
+    int uniquePaths2(int m, int n);
+
     void test62();
 };
 
