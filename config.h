@@ -21,6 +21,7 @@
 #include <cmath>
 #include <utility>
 #include <numeric>
+#include <memory>
 
 using namespace std;
 

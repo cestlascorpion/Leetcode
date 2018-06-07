@@ -1,13 +1,12 @@
 //
 // Created by cestl on 2018/5/10 0010.
 //
-#include "config.h"
-#include "Leetcode35/Leetcode35.h"
+#include "Leetcode692/Leetcode692.h"
 
 int main() {
-    std::cout << "Leetcode" << std::endl;
-    Leetcode35 sol;
-    sol.test35();
-    std::cout << "Solutions" << std::endl;
+
+    Leetcode692 sol;
+    sol.test692();
+
     return 0;
 }
