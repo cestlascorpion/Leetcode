@@ -4,9 +4,6 @@
 #include "Leetcode692/Leetcode692.h"
 
 int main() {
-
-    Leetcode692 sol;
-    sol.test692();
-
+    cout<<"cplusplus sucks"<<endl;
     return 0;
 }
