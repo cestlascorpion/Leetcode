@@ -90,7 +90,7 @@ void Sort::ShellSort(vector<int> &nums) {
         return;
     for (int d = (int) (nums.size() >> 1); d > 0; d = d >> 1) {
         for (int i = d; i < nums.size(); ++i) {
-            for (int j = i - d; j >= 0 && nums[j + d] < nums[j]; --j) {
+            for (int j = i - d; j >= 0 && nums[j + d] < nums[j]; j = j - d) {
                 swap(nums[j], nums[j + d]);
             }
         }
