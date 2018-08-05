@@ -43,7 +43,7 @@ vector<int> BinaryTree::Preorder(TreeNode *root) {
         return ans;
     stack<TreeNode *> s;
     TreeNode *p = root;
-    while (s.empty() == false || p != nullptr) {
+    while (!s.empty() || p != nullptr) {
         if (p != nullptr) {
             ans.push_back(p->val);
             s.push(p);
@@ -63,7 +63,7 @@ vector<int> BinaryTree::Inorder(TreeNode *root) {
         return ans;
     stack<TreeNode *> s;
     TreeNode *p = root;
-    while (s.empty() == false || p != nullptr) {
+    while (!s.empty() || p != nullptr) {
         if (p != nullptr) {
             s.push(p);
             p = p->left;
@@ -84,7 +84,7 @@ vector<int> BinaryTree::Postorder(TreeNode *root) {
     stack<TreeNode *> s;
     TreeNode *cur = root;
     TreeNode *pre = nullptr;
-    while (s.empty() == false || cur != nullptr) {
+    while (!s.empty() || cur != nullptr) {
         if (cur != nullptr) {
             s.push(cur);
             cur = cur->left;
@@ -110,7 +110,7 @@ vector<int> BinaryTree::Postorder2(TreeNode *root) {
         return ans;
     stack<TreeNode *> s;
     TreeNode *p = root;
-    while (s.empty() == false || p != nullptr) {
+    while (!s.empty() || p != nullptr) {
         if (p != nullptr) {
             ans.push_back(p->val);
             s.push(p);
@@ -217,4 +217,36 @@ void BinaryTree::testBinaryTree() {
         cout << "BFS tested with no bugs." << endl;
     else
         cout << "BFS tested failed." << endl;
+}
+
+void BinaryTree::rePreorderHelper(TreeNode *root, vector<int> &ans) {
+    ans.push_back(root->val);
+    if (root->left != nullptr)
+        rePreorderHelper(root->left, ans);
+    if (root->right != nullptr)
+        rePreorderHelper(root->right, ans);
+}
+
+void BinaryTree::reInorderHelper(TreeNode *root, vector<int> &ans) {
+    if (root->left != nullptr)
+        reInorderHelper(root->left, ans);
+    ans.push_back(root->val);
+    if (root->right != nullptr)
+        reInorderHelper(root->right, ans);
+}
+
+void BinaryTree::rePostorderHelper(TreeNode *root, vector<int> &ans) {
+    if (root->left != nullptr)
+        rePostorderHelper(root->left, ans);
+    if (root->right != nullptr)
+        rePostorderHelper(root->right, ans);
+    ans.push_back(root->val);
+}
+
+void BinaryTree::rePostorderHelper2(TreeNode *root, vector<int> &ans) {
+    ans.push_back(root->val);
+    if (root->right != nullptr)
+        rePostorderHelper2(root->right, ans);
+    if (root->left != nullptr)
+        rePostorderHelper2(root->left, ans);
 }

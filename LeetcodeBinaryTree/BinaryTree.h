@@ -47,43 +47,13 @@ public:
     void testBinaryTree();
 
 private:
-    void rePreorderHelper(TreeNode *root, vector<int> &ans) {
-        ans.push_back(root->val);
-        if (root->left != nullptr)
-            rePreorderHelper(root->left, ans);
-        if (root->right != nullptr)
-            rePreorderHelper(root->right, ans);
-    }
+    void rePreorderHelper(TreeNode *root, vector<int> &ans);
 
-    void reInorderHelper(TreeNode *root, vector<int> &ans) {
-        if (root->left != nullptr)
-            reInorderHelper(root->left, ans);
-        ans.push_back(root->val);
-        if (root->right != nullptr)
-            reInorderHelper(root->right, ans);
-    }
+    void reInorderHelper(TreeNode *root, vector<int> &ans);
 
-    void rePostorderHelper(TreeNode *root, vector<int> &ans) {
-        if (root->left != nullptr)
-            rePostorderHelper(root->left, ans);
-        if (root->right != nullptr)
-            rePostorderHelper(root->right, ans);
-        ans.push_back(root->val);
-    }
+    void rePostorderHelper(TreeNode *root, vector<int> &ans);
 
-    //left->right->root
-    // reverse the order
-    // (root->"left"->"right")
-    // to
-    //("right"->"left"->root)
-    //take "right" as left and "left" as "right"
-    void rePostorderHelper2(TreeNode *root, vector<int> &ans) {
-        ans.push_back(root->val);
-        if (root->right != nullptr)
-            rePostorderHelper2(root->right, ans);
-        if (root->left != nullptr)
-            rePostorderHelper2(root->left, ans);
-    }
+    void rePostorderHelper2(TreeNode *root, vector<int> &ans);
 
 };
 
