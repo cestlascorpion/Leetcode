@@ -7,41 +7,43 @@
 
 #include "../config.h"
 
-template<typename T>
+template <typename T>
 class Singleton {
-public:
-    template<typename ...Args>
-    static T *Instance(Args &&...args) {
-        if (m_pInstance == nullptr) {
-            m_pInstance = new T(std::forward<Args>(args)...);
-        }
-        return m_pInstance;
+ public:
+  template <typename... Args>
+  static T *Instance(Args &&... args) {
+    if (m_pInstance == nullptr) {
+      m_pInstance = new T(std::forward<Args>(args)...);
     }
+    return m_pInstance;
+  }
 
-    static T *GetInstance() {
-        if (m_pInstance == nullptr) {
-            throw std::logic_error("the instance is not init, please initialize the instance first!");
-        }
-        return m_pInstance;
+  static T *GetInstance() {
+    if (m_pInstance == nullptr) {
+      throw std::logic_error(
+          "the instance is not init, please initialize the instance first!");
     }
+    return m_pInstance;
+  }
 
-    static void DestroyInstance() {
-        delete m_pInstance;
-        m_pInstance = nullptr;
-    }
+  static void DestroyInstance() {
+    if (m_pInstance != nullptr) delete m_pInstance;
+    m_pInstance = nullptr;
+  }
 
-private:
-    Singleton(void);
+ private:
+  Singleton(void);
 
-    virtual ~Singleton();
+  virtual ~Singleton();
 
-    Singleton(const Singleton &);
+  Singleton(const Singleton &);
 
-    Singleton &operator=(const Singleton &);
+  Singleton &operator=(const Singleton &);
 
-    static T *m_pInstance;
+  static T *m_pInstance;
 };
 
-template<typename T> T *Singleton<T>::m_pInstance = nullptr;
+template <typename T>
+T *Singleton<T>::m_pInstance = nullptr;
 
-#endif //LEETCODE_SINGLETON_H
+#endif  // LEETCODE_SINGLETON_H
