@@ -1,9 +1,11 @@
 //
 // Created by cestl on 2018/5/10 0010.
 //
-#include "Leetcode692/Leetcode692.h"
+#include "LeetcodeSort/Sort.h"
 
 int main() {
-    cout<<"cplusplus sucks"<<endl;
+    cout << "cplusplus sucks" << endl;
+    Sort s;
+    s.testSort();
     return 0;
 }

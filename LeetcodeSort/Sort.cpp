@@ -54,8 +54,8 @@ void Sort::QuickSort2(vector<int> &nums) {
         s.pop();
         if (boundary.first < boundary.second) {
             int pos = qsortpartion(nums, boundary.first, boundary.second);
-            s.push(make_pair(boundary.first,pos-1));
-            s.push(make_pair(pos+1,boundary.second));
+            s.push(make_pair(boundary.first, pos - 1));
+            s.push(make_pair(pos + 1, boundary.second));
         }
     }
 }
@@ -191,10 +191,73 @@ void Sort::testSort() {
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     HeapSort(nums);
     printsortans(nums);
+
+    ListNode p1(7);
+    ListNode p2(5);
+    ListNode p3(6);
+    ListNode p4(4);
+    ListNode p5(13);
+    ListNode p6(15);
+    ListNode p7(7);
+    ListNode p8(9);
+    ListNode p9(6);
+    ListNode p10(3);
+    ListNode p11(5);
+    ListNode p12(11);
+    ListNode p13(14);
+
+    p1.next = &p2;
+    p2.next = &p3;
+    p3.next = &p4;
+    p4.next = &p5;
+    p5.next = &p6;
+    p6.next = &p7;
+    p7.next = &p8;
+    p8.next = &p9;
+    p9.next = &p10;
+    p10.next = &p11;
+    p11.next = &p12;
+    p12.next = &p13;
+
+    QuickSort4List(&p1);
+    ListNode *p = &p1;
+    while (p) {
+        cout << p->val << "\t";
+        p = p->next;
+    }
 }
 
 void Sort::printsortans(vector<int> &ans) {
     for (auto item : ans)
         cout << item << "\t";
     cout << endl;
+}
+
+void Sort::QuickSort4List(ListNode *head) {
+    if (head == nullptr)
+        return;
+    stack<pair<ListNode *, ListNode *>> s;
+    s.push(make_pair(head, nullptr)); // [low, high)
+    while (!s.empty()) {
+        ListNode *low = s.top().first;
+        ListNode *high = s.top().second;
+        s.pop();
+
+        int key = low->val;
+        ListNode *p = low;
+        ListNode *q = low->next;
+
+        while (q && q != high) {
+            if (q->val < key) {
+                p = p->next;
+                swap(p->val, q->val);
+            }
+            q = q->next;
+        }
+        swap(p->val, low->val);
+        if (low != nullptr && (low != p))
+            s.push(make_pair(low, p));
+        if (p != nullptr && p->next != nullptr && p->next != high)
+            s.push(make_pair(p->next, high));
+    }
 }

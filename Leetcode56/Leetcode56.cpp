@@ -9,7 +9,8 @@ vector<Interval> Leetcode56::merge(vector<Interval> &intervals) {
         return intervals;
 
     vector<Interval> ans;
-    sort(intervals.begin(), intervals.end());
+    sort(intervals.begin(), intervals.end(),
+         [](Interval &a, Interval &b) -> bool { return a.start == b.start ? a.end < b.end : a.start < b.start; });
     for (int i = 1; i < intervals.size(); ++i) {
         if (intervals[i - 1].end < intervals[i].start) {
             ans.push_back(intervals[i - 1]);

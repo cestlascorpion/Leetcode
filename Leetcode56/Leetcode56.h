@@ -14,13 +14,6 @@ struct Interval {
     Interval() : start(0), end(0) {}
 
     Interval(int s, int e) : start(s), end(e) {}
-
-    bool operator<(const Interval &b) {
-        if (this->start == b.start)
-            return this->end < b.end;
-        else
-            return this->start < b.start;
-    }
 };
 
 class Leetcode56 {

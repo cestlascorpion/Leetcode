@@ -17,6 +17,8 @@ public:
 
     void QuickSort2(vector<int> &nums);
 
+    void QuickSort4List(ListNode *head);
+
     void SelectSort(vector<int> &nums);
 
     void InsertSort(vector<int> &nums);
@@ -40,7 +42,7 @@ private:
 
     void heapdajust(vector<int> &nums, int root, int n);
 
-    void printsortans(vector<int>&ans);
+    void printsortans(vector<int> &ans);
 };
 
 

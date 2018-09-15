@@ -13,13 +13,17 @@ int Leetcode322::coinChange(vector<int> &coins, int amount) {
     sort(coins.begin(), coins.end());
     for (int i = 1; i <= amount; ++i) {
         for (int j = 0; j < coins.size() && i - coins[j] >= 0; ++j) {
-            if (helper[i - coins[j]] >= 0)
-                if (helper[i] >= 0)
+            if (helper[i - coins[j]] >= 0) {
+                if (helper[i] >= 0) {
                     helper[i] = min(helper[i], 1 + helper[i - coins[j]]);
-                else
+                } else {
                     helper[i] = 1 + helper[i - coins[j]];
+                }
+            }
         }
     }
+
+
     return helper[amount];
 }
 
