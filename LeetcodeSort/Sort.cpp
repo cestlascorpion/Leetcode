@@ -18,18 +18,18 @@ void Sort::BubbleSort(vector<int> &nums) {
 void Sort::QuickSort(vector<int> &nums) {
     if (nums.empty())
         return;
-    quicksort(nums, 0, nums.size() - 1);
+    QuickSortImpl(nums, 0, nums.size() - 1);
 }
 
-void Sort::quicksort(vector<int> &nums, int low, int high) {
+void Sort::QuickSortImpl(vector<int> &nums, int low, int high) {
     if (low < high) {
-        int pos = qsortpartion(nums, low, high);
-        quicksort(nums, low, pos - 1);
-        quicksort(nums, pos + 1, high);
+        int pos = QsortPartition(nums, low, high);
+        QuickSortImpl(nums, low, pos - 1);
+        QuickSortImpl(nums, pos + 1, high);
     }
 }
 
-int Sort::qsortpartion(vector<int> &nums, int low, int high) {
+int Sort::QsortPartition(vector<int> &nums, int low, int high) {
     int key = nums[low];
     while (low < high) {
         while (low < high && nums[high] > key)
@@ -53,7 +53,7 @@ void Sort::QuickSort2(vector<int> &nums) {
         pair<int, int> boundary(s.top().first, s.top().second);
         s.pop();
         if (boundary.first < boundary.second) {
-            int pos = qsortpartion(nums, boundary.first, boundary.second);
+            int pos = QsortPartition(nums, boundary.first, boundary.second);
             s.push(make_pair(boundary.first, pos - 1));
             s.push(make_pair(pos + 1, boundary.second));
         }
@@ -88,7 +88,7 @@ void Sort::InsertSort(vector<int> &nums) {
 void Sort::ShellSort(vector<int> &nums) {
     if (nums.empty())
         return;
-    for (int d = (int) (nums.size() >> 1); d > 0; d = d >> 1) {
+    for (int d = nums.size() / 2; d > 0; d = d / 2) {
         for (int i = d; i < nums.size(); ++i) {
             for (int j = i - d; j >= 0 && nums[j + d] < nums[j]; j = j - d) {
                 swap(nums[j], nums[j + d]);
@@ -100,19 +100,19 @@ void Sort::ShellSort(vector<int> &nums) {
 void Sort::MergeSort(vector<int> &nums) {
     if (nums.empty())
         return;
-    msortpartion(nums, 0, nums.size() - 1);
+    MsortPartition(nums, 0, nums.size() - 1);
 }
 
-void Sort::msortpartion(vector<int> &nums, int low, int high) {
+void Sort::MsortPartition(vector<int> &nums, int low, int high) {
     if (low < high) {
-        int mid = (low + high) >> 1;
-        msortpartion(nums, low, mid);
-        msortpartion(nums, mid + 1, high);
-        domerge(nums, low, mid, high);
+        int mid = low + (high - low) / 2;
+        MsortPartition(nums, low, mid);
+        MsortPartition(nums, mid + 1, high);
+        MergeImpl(nums, low, mid, high);
     }
 }
 
-void Sort::domerge(vector<int> &nums, int low, int mid, int high) {
+void Sort::MergeImpl(vector<int> &nums, int low, int mid, int high) {
     vector<int> temp = nums;
     int i = low;
     int j = mid + 1;
@@ -134,16 +134,16 @@ void Sort::HeapSort(vector<int> &nums) {
         return;
     //make heap
     for (int i = nums.size() / 2 - 1; i >= 0; --i) {
-        heapdajust(nums, i, nums.size());
+        HeapAdjust(nums, i, nums.size());
     }
     //heap adjust
     for (int i = nums.size() - 1; i > 0; --i) {
         swap(nums[i], nums[0]);
-        heapdajust(nums, 0, i);
+        HeapAdjust(nums, 0, i);
     }
 }
 
-void Sort::heapdajust(vector<int> &nums, int root, int n) {
+void Sort::HeapAdjust(vector<int> &nums, int root, int n) {
     int i = root;
     int j = root * 2 + 1;
     while (j < n) {
@@ -156,41 +156,41 @@ void Sort::heapdajust(vector<int> &nums, int root, int n) {
     }
 }
 
-void Sort::testSort() {
+void Sort::TestSort() {
 
     vector<int> nums;
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     BubbleSort(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     QuickSort(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     QuickSort2(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     SelectSort(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     InsertSort(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     ShellSort(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     MergeSort(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     nums = {7, 5, 6, 4, 13, 15, 7, 9, 6, 3, 5, 11, 14};
     HeapSort(nums);
-    printsortans(nums);
+    PrintSortAns(nums);
 
     ListNode p1(7);
     ListNode p2(5);
@@ -227,7 +227,7 @@ void Sort::testSort() {
     }
 }
 
-void Sort::printsortans(vector<int> &ans) {
+void Sort::PrintSortAns(vector<int> &ans) {
     for (auto item : ans)
         cout << item << "\t";
     cout << endl;
@@ -244,17 +244,18 @@ void Sort::QuickSort4List(ListNode *head) {
         s.pop();
 
         int key = low->val;
-        ListNode *p = low;
-        ListNode *q = low->next;
+        // --smaller than key--P--bigger than key--
+        ListNode *p = low;  // p->val is smaller than key
+        ListNode *q = low->next; // cursor
 
-        while (q && q != high) {
+        while (q != high) {
             if (q->val < key) {
-                p = p->next;
-                swap(p->val, q->val);
+                p = p->next; // p->val is smaller than key, so move forward
+                swap(p->val, q->val); // swap a smaller val forward
             }
-            q = q->next;
+            q = q->next; // ++ cursor
         }
-        swap(p->val, low->val);
+        swap(p->val, key);
         if (low != nullptr && (low != p))
             s.push(make_pair(low, p));
         if (p != nullptr && p->next != nullptr && p->next != high)

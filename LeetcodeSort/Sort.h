@@ -29,20 +29,20 @@ public:
 
     void HeapSort(vector<int> &nums);
 
-    void testSort();
+    void TestSort();
 
 private:
-    void quicksort(vector<int> &nums, int low, int high);
+    void QuickSortImpl(vector<int> &nums, int low, int high);
 
-    int qsortpartion(vector<int> &nums, int low, int high);
+    int QsortPartition(vector<int> &nums, int low, int high);
 
-    void domerge(vector<int> &nums, int low, int mid, int high);
+    void MergeImpl(vector<int> &nums, int low, int mid, int high);
 
-    void msortpartion(vector<int> &nums, int low, int high);
+    void MsortPartition(vector<int> &nums, int low, int high);
 
-    void heapdajust(vector<int> &nums, int root, int n);
+    void HeapAdjust(vector<int> &nums, int root, int n);
 
-    void printsortans(vector<int> &ans);
+    void PrintSortAns(vector<int> &ans);
 };
 
 
