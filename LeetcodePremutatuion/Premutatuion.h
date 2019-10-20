@@ -5,7 +5,7 @@
 #ifndef LEETCODE_PREMUTATUION_H
 #define LEETCODE_PREMUTATUION_H
 
-#include "../config.h"
+#include <config.h>
 
 class Premutatuion {
 public:

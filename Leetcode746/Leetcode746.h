@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE746_H
 #define LEETCODE_LEETCODE746_H
 
-#include "../config.h"
+#include <config.h>
 
 class Leetcode746 {
     int minCostClimbingStairs(vector<int> &cost);

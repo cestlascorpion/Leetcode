@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEECODE36_H
 #define LEETCODE_LEECODE36_H
 
-#include "../config.h"
+#include <config.h>
 
 class Leecode36 {
 public:

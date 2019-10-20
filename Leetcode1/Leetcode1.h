@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE1_H
 #define LEETCODE_LEETCODE1_H
 
-#include "../config.h"
+#include <config.h>
 #include <ostream>
 
 class Leetcode1 {

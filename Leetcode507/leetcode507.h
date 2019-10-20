@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE507_H
 #define LEETCODE_LEETCODE507_H
 
-#include "../config.h"
+#include <config.h>
 class leetcode507 {
 public:
     bool checkPerfectNumber(int num);

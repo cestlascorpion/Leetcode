@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE463_H
 #define LEETCODE_LEETCODE463_H
 
-#include "../config.h"
+#include <config.h>
 
 class Leetcode463 {
 public:

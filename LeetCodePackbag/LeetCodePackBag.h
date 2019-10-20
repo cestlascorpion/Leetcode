@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODEPACKBAG_H
 #define LEETCODE_LEETCODEPACKBAG_H
 
-#include "../config.h"
+#include <config.h>
 
 #define Number 5
 #define Space 12

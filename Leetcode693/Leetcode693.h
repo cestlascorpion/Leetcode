@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE693_H
 #define LEETCODE_LEETCODE693_H
 
-#include "../config.h"
+#include <config.h>
 
 class Leetcode693 {
     bool hasAlternatingBits(int n);

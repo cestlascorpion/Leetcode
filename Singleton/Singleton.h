@@ -5,7 +5,7 @@
 #ifndef LEETCODE_SINGLETON_H
 #define LEETCODE_SINGLETON_H
 
-#include "../config.h"
+#include <config.h>
 
 template <typename T>
 class Singleton {

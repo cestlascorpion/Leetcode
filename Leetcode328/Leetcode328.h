@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE328_H
 #define LEETCODE_LEETCODE328_H
 
-#include "../config.h"
+#include <config.h>
 
 class Leetcode328 {
 public:
