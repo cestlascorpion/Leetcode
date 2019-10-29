@@ -1,8 +1,8 @@
+#include <Leetcode276cn/Leetcode276cn.h>
 #include <config.h>
-
 void test() {
-    cout << "=========== test ===========" << endl;
-    cout << "=========== test ===========" << endl;
+    Leetcode276cn sol;
+    cout << sol.numWays(3, 2);
 }
 
 int main() {
