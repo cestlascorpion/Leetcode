@@ -1,12 +1,14 @@
-#include <Leetcode293cn/Leetcode293cn.h>
+#include "Leetcode208cn/Trie.h"
 #include <config.h>
+
 void test() {
-    Leetcode293cn sol;
-    string s = "+++++";
-    auto res = sol.generatePossibleNextMoves(s);
-    for (const auto &str : res) {
-        cout << str << endl;
-    }
+    Trie trie;
+    trie.insert("apple");
+    cout << trie.search("apple");   // 返回 true
+    cout << trie.search("app");     // 返回 false
+    cout << trie.startsWith("app"); // 返回 true
+    trie.insert("app");
+    cout << trie.search("app");     // 返回 true
 }
 
 int main() {
