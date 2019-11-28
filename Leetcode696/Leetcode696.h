@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE696_H
 #define LEETCODE_LEETCODE696_H
 
-#include <config.h>
+#include "config.h"
 
 class Leetcode696 {
     int countBinarySubstrings(string s);

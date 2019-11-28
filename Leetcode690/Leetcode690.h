@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE690_H
 #define LEETCODE_LEETCODE690_H
 
-#include <config.h>
+#include "config.h"
 
 class Employee {
 public:

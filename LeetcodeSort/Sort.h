@@ -5,7 +5,7 @@
 #ifndef LEETCODE_SORT_H
 #define LEETCODE_SORT_H
 
-#include <config.h>
+#include "config.h"
 
 using namespace std;
 

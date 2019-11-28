@@ -5,7 +5,7 @@
 #ifndef LEETCODE_NUMARRAY_H
 #define LEETCODE_NUMARRAY_H
 
-#include <config.h>
+#include "config.h"
 
 class NumArrayy {
 public:

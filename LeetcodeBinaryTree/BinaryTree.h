@@ -5,7 +5,7 @@
 #ifndef LEETCODE_BINARYTREE_H
 #define LEETCODE_BINARYTREE_H
 
-#include <config.h>
+#include "config.h"
 
 using namespace std;
 

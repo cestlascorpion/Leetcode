@@ -5,7 +5,7 @@
 #ifndef LEETCODE_TRIE_H
 #define LEETCODE_TRIE_H
 
-#include <config.h>
+#include "config.h"
 
 class Trie {
 public:

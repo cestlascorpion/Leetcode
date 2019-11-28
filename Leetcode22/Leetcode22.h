@@ -5,7 +5,7 @@
 #ifndef LEETCODE_LEETCODE22_H
 #define LEETCODE_LEETCODE22_H
 
-#include <config.h>
+#include "config.h"
 
 class Leetcode22 {
 public:
