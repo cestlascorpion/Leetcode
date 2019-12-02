@@ -6,5 +6,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(.)
 
-add_executable(Leetcode main.cpp config.h Leetcode506cn/Leetcode506cn.cpp Leetcode506cn/Leetcode506cn.h)
+add_executable(Leetcode main.cpp config.h
+        Leetcode1099cn/Leetcode1099cn.cpp Leetcode1099cn/Leetcode1099cn.h)
 
