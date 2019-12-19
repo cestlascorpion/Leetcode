@@ -1,9 +1,6 @@
-#include "Leetcode893cn/Leetcode893cn.h"
+#include "config.h"
 
 void test() {
-    Leetcode893cn sol;
-    vector<string> s{"abc","acb","bac","bca","cab","cba"};
-    cout << sol.numSpecialEquivGroups(s) << endl;
 }
 
 int main() {
